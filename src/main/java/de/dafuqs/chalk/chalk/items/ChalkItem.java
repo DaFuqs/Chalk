@@ -1,0 +1,127 @@
+package de.dafuqs.chalk.chalk.items;
+
+import de.dafuqs.chalk.chalk.Chalk;
+import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+
+import java.util.Random;
+
+public class ChalkItem extends Item {
+
+    Block CHALK_MARK;
+
+    public ChalkItem(Settings settings, Block chalkMarkBlock) {
+        super(settings);
+        this.CHALK_MARK = chalkMarkBlock;
+    }
+
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        final World world = context.getWorld();
+        final BlockPos pos = context.getBlockPos();
+        final BlockState clickedBlockState = world.getBlockState(pos);
+        final PlayerEntity player = context.getPlayer();
+        final ItemStack stack = context.getStack();
+        Direction clickedFace = context.getSide();
+        BlockPos markPosition = pos.offset(clickedFace);
+
+        if (clickedBlockState.getBlock() == CHALK_MARK) { // replace mark
+            clickedFace = clickedBlockState.get(ChalkMarkBlock.FACING);
+            markPosition = pos;
+            world.removeBlock(pos, false);
+        } else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace))
+            return ActionResult.PASS;
+        else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() != CHALK_MARK) ||
+                stack.getItem() != this)
+            return ActionResult.PASS;
+
+        if (world.isClient) {
+            Random r = new Random();
+            world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (r.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (r.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
+            return ActionResult.PASS;
+        }
+
+        final int orientation = getClickedRegion(context.getHitPos(), clickedFace);
+
+        BlockState blockState = CHALK_MARK.getDefaultState()
+                .with(ChalkMarkBlock.FACING, clickedFace)
+                .with(ChalkMarkBlock.ORIENTATION, orientation);
+
+        if (world.setBlockState(markPosition, blockState, 1 | 2)) {
+            if (!player.isCreative()) {
+                stack.damage(1, world.random, (ServerPlayerEntity) player);
+                if (stack.getDamage() >= stack.getMaxDamage()) {
+                    //player.setItemInHand(context.getHand(), ItemStack.EMPTY);
+                    world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
+                }
+                stack.damage(1, player, (e) -> {
+                    e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
+                });
+            }
+
+            world.playSound(null, markPosition, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundCategory.BLOCKS, 0.6f, world.random.nextFloat() * 0.2f + 0.8f);
+            return ActionResult.CONSUME;
+        }
+
+        return ActionResult.FAIL;
+    }
+
+    private int getClickedRegion(Vec3d clickLocation, Direction face) {
+
+        // Calculates which region of the block was clicked:
+        // Matrix represents the block regions:
+        final int[][] blockRegions = new int[][]{
+                new int[]{0, 1, 2},
+                new int[]{3, 4, 5},
+                new int[]{6, 7, 8}
+        };
+
+        final double x = clickLocation.x;
+        final double y = clickLocation.y;
+        final double z = clickLocation.z;
+
+        // Remove whole number: 21.31 => 0.31
+        final double fracx = x - (int) x;
+        final double fracz = z - (int) z;
+
+        // Normalize negative values
+        final double dx = fracx > 0 ? fracx : fracx + 1;
+        final double dy = y - (int) y;
+        final double dz = fracz > 0 ? fracz : fracz + 1;
+
+        if (face == Direction.UP || face == Direction.DOWN) {
+            final int xpart = Math.min(2, (int) (dx / 0.333));
+            final int zpart = Math.min(2, (int) (dz / 0.333));
+
+            return blockRegions[zpart][xpart];
+        } else if (face == Direction.NORTH || face == Direction.SOUTH) {
+            final int xpart = Math.min(2, (int) (dx / 0.333));
+            final int ypart = Math.min(2, (int) ((1 - dy) / 0.333));
+
+            return blockRegions[ypart][xpart];
+        } else if (face == Direction.WEST || face == Direction.EAST) {
+            final int zpart = Math.min(2, (int) (dz / 0.333));
+            final int ypart = Math.min(2, (int) ((1 - dy) / 0.333));
+
+            return blockRegions[ypart][zpart];
+        } else
+            return 4; // Center of the block by default
+    }
+
+}

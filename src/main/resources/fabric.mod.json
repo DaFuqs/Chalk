@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "chalk",
+  "version": "${version}",
+  "name": "Chalk",
+  "description": "Fabric port of the forge mod chalk by mortuusars with some additions",
+  "authors": [
+    "DaFuqs",
+    "mortuusars"
+  ],
+  "contact": {
+    "website": "https://github.com/DaFuqs/Chalk"
+  },
+  "license": "MIT",
+  "icon": "assets/chalk/textures/item/chalk.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "de.dafuqs.chalk.chalk.ChalkClient"
+    ],
+    "main": [
+      "de.dafuqs.chalk.chalk.Chalk"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": ">=1.17.1"
+  }
+}
