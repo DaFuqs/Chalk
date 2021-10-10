@@ -1,10 +1,7 @@
 package de.dafuqs.chalk.chalk.blocks;
 
 import de.dafuqs.chalk.chalk.Chalk;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -75,9 +72,9 @@ public class ChalkMarkBlock extends Block {
             world.playSound(null, pos, SoundEvents.BLOCK_WART_BLOCK_HIT, SoundCategory.BLOCKS, 0.5f, new Random().nextFloat() * 0.2f + 0.8f);
         else{
             Random r = new Random();
+
             world.addParticle(ParticleTypes.CLOUD,  pos.getX() + (0.5 * (r.nextFloat() + 0.15)), pos.getY() + 0.3, pos.getZ() + (0.5 * (r.nextFloat() + 0.15)), 0.0D, 0.0D, 0.0D);
         }
-        //super.spawnBreakParticles(world, player, pos, state);
     }
 
     @Override
@@ -108,23 +105,18 @@ public class ChalkMarkBlock extends Block {
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        BlockPos blockPos = pos.down();
-        return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
-    }
-
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isOf(Blocks.FARMLAND);
+        Direction facing = state.get(FACING);
+        return Block.isFaceFullSquare(world.getBlockState(pos.offset(facing.getOpposite())).getCollisionShape(world, pos.offset(facing)), facing);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         boolean support = neighborPos.equals(pos.offset(state.get(FACING).getOpposite()));
         if(support) {
-            return Blocks.AIR.getDefaultState();
+            if(!this.canPlaceAt(state, world, pos)) {
+                return Blocks.AIR.getDefaultState();
+            }
         }
         return state;
-        /*if(relative.equals(fromPos)) {
-            removeMark(world, pos);
-        }*/
     }
 
 }

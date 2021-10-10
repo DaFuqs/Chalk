@@ -1,14 +1,14 @@
 {
     "ambientocclusion": true,
     "textures": {
-        "particle": "chalk:block/chalk",
-        "tex": "chalk:block/chalk"
+        "particle": "chalk:block/chalk_diagonal",
+        "tex": "chalk:block/chalk_diagonal"
     },
     "elements": [
         {   "from": [ 0, 15.9, 0 ],
             "to": [ 16, 16, 16 ],
             "rotation": {
-                "origin": [8,8,8], "axis": "y", "angle": -45
+                "origin": [8,8,8], "axis": "y", "angle": 0
             },
             "shade": true,
             "faces": {

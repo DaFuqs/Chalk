@@ -45,11 +45,11 @@ public class ChalkItem extends Item {
             clickedFace = clickedBlockState.get(ChalkMarkBlock.FACING);
             markPosition = pos;
             world.removeBlock(pos, false);
-        } else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace))
+        } else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
             return ActionResult.PASS;
-        else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() != CHALK_MARK) ||
-                stack.getItem() != this)
+        } else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() != CHALK_MARK) || stack.getItem() != this) {
             return ActionResult.PASS;
+        }
 
         if (world.isClient) {
             Random r = new Random();
