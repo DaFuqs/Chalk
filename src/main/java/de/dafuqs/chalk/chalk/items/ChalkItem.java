@@ -54,7 +54,7 @@ public class ChalkItem extends Item {
         if (world.isClient) {
             Random r = new Random();
             world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (r.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (r.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
-            return ActionResult.PASS;
+            return ActionResult.SUCCESS;
         }
 
         final int orientation = getClickedRegion(context.getHitPos(), clickedFace);
@@ -65,9 +65,7 @@ public class ChalkItem extends Item {
 
         if (world.setBlockState(markPosition, blockState, 1 | 2)) {
             if (!player.isCreative()) {
-                stack.damage(1, world.random, (ServerPlayerEntity) player);
                 if (stack.getDamage() >= stack.getMaxDamage()) {
-                    //player.setItemInHand(context.getHand(), ItemStack.EMPTY);
                     world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
                 }
                 stack.damage(1, player, (e) -> {
