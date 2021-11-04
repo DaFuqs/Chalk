@@ -9,7 +9,9 @@
     "mortuusars"
   ],
   "contact": {
-    "website": "https://github.com/DaFuqs/Chalk"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chalk-fabric",
+    "sources": "https://github.com/DaFuqs/Chalk",
+    "issues": "https://github.com/DaFuqs/Chalk/issues"
   },
   "license": "MIT",
   "icon": "assets/chalk/textures/item/chalk.png",
