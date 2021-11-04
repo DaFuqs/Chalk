@@ -96,11 +96,12 @@ public class ChalkItem extends Item {
 
         // Remove whole number: 21.31 => 0.31
         final double fracx = x - (int) x;
+        final double fracy = y - (int) y;
         final double fracz = z - (int) z;
 
         // Normalize negative values
         final double dx = fracx > 0 ? fracx : fracx + 1;
-        final double dy = y - (int) y;
+        final double dy = fracy > 0 ? fracy : fracy + 1;
         final double dz = fracz > 0 ? fracz : fracz + 1;
 
         if (face == Direction.UP || face == Direction.DOWN) {
