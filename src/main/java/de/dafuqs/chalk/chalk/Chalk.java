@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -40,17 +39,21 @@ public class Chalk implements ModInitializer {
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, name), item);
+    private static void registerItem(String name, Item item) {
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, name), item);
     }
 
     @Override
     public void onInitialize() {
+        log(Level.INFO, "Registering blocks and items...");
+        
         registerBlock("chalk_mark", CHALK_MARK_BLOCK);
         registerItem("chalk", CHALK_ITEM);
 
         registerBlock("glow_chalk_mark", GLOW_CHALK_MARK_BLOCK);
         registerItem("glow_chalk", GLOW_CHALK_ITEM);
+    
+        log(Level.INFO, "Startup finished!");
     }
 
     public static void log(Level logLevel, String message) {

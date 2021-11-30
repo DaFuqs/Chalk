@@ -1,6 +1,5 @@
 package de.dafuqs.chalk.chalk.items;
 
-import de.dafuqs.chalk.chalk.Chalk;
 import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -19,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -68,9 +67,7 @@ public class ChalkItem extends Item {
                 if (stack.getDamage() >= stack.getMaxDamage()) {
                     world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
                 }
-                stack.damage(1, player, (e) -> {
-                    e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
-                });
+                stack.damage(1, player, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
             }
 
             world.playSound(null, markPosition, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundCategory.BLOCKS, 0.6f, world.random.nextFloat() * 0.2f + 0.8f);
@@ -80,7 +77,7 @@ public class ChalkItem extends Item {
         return ActionResult.FAIL;
     }
 
-    private int getClickedRegion(Vec3d clickLocation, Direction face) {
+    private int getClickedRegion(@NotNull Vec3d clickLocation, Direction face) {
 
         // Calculates which region of the block was clicked:
         // Matrix represents the block regions:
@@ -95,14 +92,14 @@ public class ChalkItem extends Item {
         final double z = clickLocation.z;
 
         // Remove whole number: 21.31 => 0.31
-        final double fracx = x - (int) x;
-        final double fracy = y - (int) y;
-        final double fracz = z - (int) z;
+        final double fracX = x - (int) x;
+        final double fracY = y - (int) y;
+        final double fracZ = z - (int) z;
 
         // Normalize negative values
-        final double dx = fracx > 0 ? fracx : fracx + 1;
-        final double dy = fracy > 0 ? fracy : fracy + 1;
-        final double dz = fracz > 0 ? fracz : fracz + 1;
+        final double dx = fracX > 0 ? fracX : fracX + 1;
+        final double dy = fracY > 0 ? fracY : fracY + 1;
+        final double dz = fracZ > 0 ? fracZ : fracZ + 1;
 
         if (face == Direction.UP || face == Direction.DOWN) {
             final int xpart = Math.min(2, (int) (dx / 0.333));
@@ -120,7 +117,7 @@ public class ChalkItem extends Item {
 
             return blockRegions[ypart][zpart];
         } else
-            return 4; // Center of the block by default
+            return 4; // center of the block by default
     }
 
 }
