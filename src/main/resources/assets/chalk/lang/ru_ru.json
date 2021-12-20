@@ -1,6 +1,6 @@
 {
   "item.chalk.chalk": "Мел",
-  "block.chalk.chalk_mark_block": "Пометка мелом",
+  "block.chalk.chalk_mark": "Пометка мелом",
   "item.chalk.glow_chalk": "Светящийся мел",
-  "block.chalk.glow_chalk_mark_block": "Светящаяся Метка Мелом"
+  "block.chalk.glow_chalk_mark": "Светящаяся Метка Мелом"
 }

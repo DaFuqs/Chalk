@@ -1,6 +1,6 @@
 {
   "item.chalk.chalk": "Kreide",
-  "block.chalk.chalk_mark_block": "Kreidezeichen",
+  "block.chalk.chalk_mark": "Kreidezeichen",
   "item.chalk.glow_chalk": "Leuchtkreide",
-  "block.chalk.glow_chalk_mark_block": "Leuchtkreidezeichen"
+  "block.chalk.glow_chalk_mark": "Leuchtkreidezeichen"
 }
