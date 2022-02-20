@@ -25,10 +25,10 @@ public class Chalk implements ModInitializer {
     public static final String MOD_ID = "chalk";
     private static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
-    public static Block CHALK_MARK_BLOCK = new ChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_UNDERWATER_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL));
+    public static Block CHALK_MARK_BLOCK = new ChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL));
     public static Item CHALK_ITEM = new ChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), CHALK_MARK_BLOCK);
 
-    public static Block GLOW_CHALK_MARK_BLOCK = new GlowChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_UNDERWATER_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 2).postProcess(Chalk::always).emissiveLighting(Chalk::always));
+    public static Block GLOW_CHALK_MARK_BLOCK = new GlowChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 2).postProcess(Chalk::always).emissiveLighting(Chalk::always));
     public static Item GLOW_CHALK_ITEM = new ChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), GLOW_CHALK_MARK_BLOCK);
 
     private static boolean always(BlockState blockState, BlockView blockView, BlockPos blockPos) {

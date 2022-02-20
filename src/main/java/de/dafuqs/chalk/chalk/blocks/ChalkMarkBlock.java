@@ -120,5 +120,9 @@ public class ChalkMarkBlock extends Block {
         }
         return state;
     }
+    
+    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
+        return true;
+    }
 
 }
