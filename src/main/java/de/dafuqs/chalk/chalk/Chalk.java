@@ -62,20 +62,18 @@ public class Chalk implements ModInitializer {
     
             ColorProviderRegistry.BLOCK.register((state, world, pos, index) -> color, chalkBlock);
             ColorProviderRegistry.BLOCK.register((state, world, pos, index) -> color, glowChalkBlock);
-            ColorProviderRegistry.ITEM.register((stack, index) -> color, chalkItem);
-            ColorProviderRegistry.ITEM.register((stack, index) -> color, glowChalkItem);
         }
     }
     
     public HashMap<DyeColor, Integer> dyeColors = new HashMap<>() {{
-        put(DyeColor.BLACK, 0x101010);
+        put(DyeColor.BLACK, 0x171717);
         put(DyeColor.BLUE, 0x2c2e8e);
         put(DyeColor.BROWN, 0x613c20);
         put(DyeColor.CYAN, 0x157687);
-        put(DyeColor.GRAY, 0x36393d);
+        put(DyeColor.GRAY, 0x292929);
         put(DyeColor.GREEN, 0x495b24);
         put(DyeColor.LIGHT_BLUE, 0x258ac8);
-        put(DyeColor.LIGHT_GRAY, 0x7d7d73);
+        put(DyeColor.LIGHT_GRAY, 0x8b8b8b);
         put(DyeColor.LIME, 0x5faa19);
         put(DyeColor.MAGENTA, 0xaa32a0);
         put(DyeColor.ORANGE, 0xe16201);
