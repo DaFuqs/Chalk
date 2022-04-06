@@ -18,6 +18,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -31,7 +32,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Random;
 
 public class ChalkMarkBlock extends Block {
-
+    
+    protected DyeColor dyeColor;
+    
     public static final DirectionProperty FACING = Properties.FACING;
     public static final IntProperty ORIENTATION = IntProperty.of("orientation", 0, 8);
 
@@ -42,8 +45,9 @@ public class ChalkMarkBlock extends Block {
     private static final VoxelShape WEST_AABB = Block.createCuboidShape(15.5D, 1.5D, 1.5D, 16D, 14.5D, 14.5D);
     private static final VoxelShape NORTH_AABB = Block.createCuboidShape(1.5D, 1.5D, 15.5D, 14.5D, 14.5D, 16D);
 
-    public ChalkMarkBlock(Settings settings) {
+    public ChalkMarkBlock(Settings settings, DyeColor dyeColor) {
         super(settings);
+        this.dyeColor = dyeColor;
         this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH).with(ORIENTATION, 0));
     }
 
@@ -65,7 +69,7 @@ public class ChalkMarkBlock extends Block {
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(Chalk.CHALK_ITEM);
+        return Chalk.chalkVariants.get(dyeColor).chalkItem.getDefaultStack();
     }
 
     @Override

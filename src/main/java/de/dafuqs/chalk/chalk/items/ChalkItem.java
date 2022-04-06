@@ -1,5 +1,6 @@
 package de.dafuqs.chalk.chalk.items;
 
+import de.dafuqs.chalk.chalk.Chalk;
 import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,6 +14,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
@@ -23,11 +25,11 @@ import java.util.Random;
 
 public class ChalkItem extends Item {
 
-    Block CHALK_MARK;
+    protected DyeColor dyeColor;
 
-    public ChalkItem(Settings settings, Block chalkMarkBlock) {
+    public ChalkItem(Settings settings, DyeColor dyeColor) {
         super(settings);
-        this.CHALK_MARK = chalkMarkBlock;
+        this.dyeColor = dyeColor;
     }
 
     @Override
@@ -40,13 +42,13 @@ public class ChalkItem extends Item {
         Direction clickedFace = context.getSide();
         BlockPos markPosition = pos.offset(clickedFace);
 
-        if (clickedBlockState.getBlock() == CHALK_MARK) { // replace mark
+        if (clickedBlockState.getBlock() instanceof ChalkMarkBlock) { // replace mark
             clickedFace = clickedBlockState.get(ChalkMarkBlock.FACING);
             markPosition = pos;
             world.removeBlock(pos, false);
         } else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
             return ActionResult.PASS;
-        } else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() != CHALK_MARK) || stack.getItem() != this) {
+        } else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) || stack.getItem() != this) {
             return ActionResult.PASS;
         }
 
@@ -58,7 +60,7 @@ public class ChalkItem extends Item {
 
         final int orientation = getClickedRegion(context.getHitPos(), clickedFace);
 
-        BlockState blockState = CHALK_MARK.getDefaultState()
+        BlockState blockState = getChalkMarkBlock().getDefaultState()
                 .with(ChalkMarkBlock.FACING, clickedFace)
                 .with(ChalkMarkBlock.ORIENTATION, orientation);
 
@@ -75,6 +77,10 @@ public class ChalkItem extends Item {
         }
 
         return ActionResult.FAIL;
+    }
+    
+    public Block getChalkMarkBlock() {
+        return Chalk.chalkVariants.get(this.dyeColor).chalkBlock;
     }
 
     private int getClickedRegion(@NotNull Vec3d clickLocation, Direction face) {
