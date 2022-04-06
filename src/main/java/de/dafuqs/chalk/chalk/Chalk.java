@@ -68,7 +68,7 @@ public class Chalk implements ModInitializer {
     }
     
     public HashMap<DyeColor, Integer> dyeColors = new HashMap<>() {{
-        put(DyeColor.BLACK, 0x1c1c1d);
+        put(DyeColor.BLACK, 0x101010);
         put(DyeColor.BLUE, 0x2c2e8e);
         put(DyeColor.BROWN, 0x613c20);
         put(DyeColor.CYAN, 0x157687);
