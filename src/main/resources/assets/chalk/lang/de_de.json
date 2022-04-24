@@ -2,5 +2,80 @@
   "item.chalk.chalk": "Kreide",
   "block.chalk.chalk_mark": "Kreidezeichen",
   "item.chalk.glow_chalk": "Leuchtkreide",
-  "block.chalk.glow_chalk_mark": "Leuchtkreidezeichen"
+  "block.chalk.glow_chalk_mark": "Leuchtkreidezeichen",
+
+  "item.chalk.red_chalk": "Rote Kreide",
+  "block.chalk.red_chalk_mark": "Rotes Kreidezeichen",
+  "item.chalk.red_glow_chalk": "Rote Leuchtkreide",
+  "block.chalk.red_glow_chalk_mark": "Rotes Leuchtkreidezeichen",
+
+  "item.chalk.blue_chalk": "Blaue Kreide",
+  "block.chalk.blue_chalk_mark": "Blaues Kreidezeichen",
+  "item.chalk.blue_glow_chalk": "Blaue Leuchtkreide",
+  "block.chalk.blue_glow_chalk_mark": "Blaues Leuchtkreidezeichen",
+
+  "item.chalk.green_chalk": "Grüne Kreide",
+  "block.chalk.green_chalk_mark": "Grünes Kreidezeichen",
+  "item.chalk.green_glow_chalk": "Grüne Leuchtkreide",
+  "block.chalk.green_glow_chalk_mark": "Grünes Leuchtkreidezeichen",
+
+  "item.chalk.purple_chalk": "Lila Kreide",
+  "block.chalk.purple_chalk_mark": "Lila Kreidezeichen",
+  "item.chalk.purple_glow_chalk": "Lila Leuchtkreide",
+  "block.chalk.purple_glow_chalk_mark": "Lila Leuchtkreidezeichen",
+
+  "item.chalk.orange_chalk": "Orange Kreide",
+  "block.chalk.orange_chalk_mark": "Oranges Kreidezeichen",
+  "item.chalk.orange_glow_chalk": "Orange Leuchtkreide",
+  "block.chalk.orange_glow_chalk_mark": "Oranges Leuchtkreidezeichen",
+
+  "item.chalk.magenta_chalk": "Magenta Kreide",
+  "block.chalk.magenta_chalk_mark": "Magenta Kreidezeichen",
+  "item.chalk.magenta_glow_chalk": "Magenta Leuchtkreide",
+  "block.chalk.magenta_glow_chalk_mark": "Magenta Leuchtkreidezeichen",
+
+  "item.chalk.light_blue_chalk": "Hellblaue Kreide",
+  "block.chalk.light_blue_chalk_mark": "Hellblaues Kreidezeichen",
+  "item.chalk.light_blue_glow_chalk": "Hellblaue Leuchtkreide",
+  "block.chalk.light_blue_glow_chalk_mark": "Hellblaues Leuchtkreidezeichen",
+
+  "item.chalk.yellow_chalk": "Gelbe Kreide",
+  "block.chalk.yellow_chalk_mark": "Gelbes Kreidezeichen",
+  "item.chalk.yellow_glow_chalk": "Gelbe Leuchtkreide",
+  "block.chalk.yellow_glow_chalk_mark": "Gelbes Leuchtkreidezeichen",
+
+  "item.chalk.lime_chalk": "Hellgrüne Kreide",
+  "block.chalk.lime_chalk_mark": "Hellgrünes Kreidezeichen",
+  "item.chalk.lime_glow_chalk": "Hellgrüne Leuchtkreide",
+  "block.chalk.lime_glow_chalk_mark": "Hellgrünes Leuchtkreidezeichen",
+
+  "item.chalk.pink_chalk": "Pinke Kreide",
+  "block.chalk.pink_chalk_mark": "Pinkes Kreidezeichen",
+  "item.chalk.pink_glow_chalk": "Pinke Leuchtkreide",
+  "block.chalk.pink_glow_chalk_mark": "Pinkes Leuchtkreidezeichen",
+
+  "item.chalk.gray_chalk": "Graue Kreide",
+  "block.chalk.gray_chalk_mark": "Graues Kreidezeichen",
+  "item.chalk.gray_glow_chalk": "Graue Leuchtkreide",
+  "block.chalk.gray_glow_chalk_mark": "Graues Leuchtkreidezeichen",
+
+  "item.chalk.light_gray_chalk": "Hellgraue Kreide",
+  "block.chalk.light_gray_chalk_mark": "Hellgraues Kreidezeichen",
+  "item.chalk.light_gray_glow_chalk": "Hellgraue Leuchtkreide",
+  "block.chalk.light_gray_glow_chalk_mark": "Hellgraues Leuchtkreidezeichen",
+
+  "item.chalk.cyan_chalk": "Türkise Kreide",
+  "block.chalk.cyan_chalk_mark": "Türkises Kreidezeichen",
+  "item.chalk.cyan_glow_chalk": "Türkise Leuchtkreide",
+  "block.chalk.cyan_glow_chalk_mark": "Türkises Leuchtkreidezeichen",
+
+  "item.chalk.brown_chalk": "Braune Kreide",
+  "block.chalk.brown_chalk_mark": "Braunes Kreidezeichen",
+  "item.chalk.brown_glow_chalk": "Braune Leuchtkreide",
+  "block.chalk.brown_glow_chalk_mark": "Braunes Leuchtkreidezeichen",
+
+  "item.chalk.black_chalk": "Schwarze Kreide",
+  "block.chalk.black_chalk_mark": "Schwarzes Kreidezeichen",
+  "item.chalk.black_glow_chalk": "Schwarze Leuchtkreide",
+  "block.chalk.black_glow_chalk_mark": "Schwarzes Leuchtkreidezeichen"
 }

@@ -12,7 +12,7 @@
             },
             "shade": true,
             "faces": {
-                "down": { "uv": [ 16, 16, 0, 0 ], "texture": "#tex" }
+                "down": { "uv": [ 16, 16, 0, 0 ], "texture": "#tex", "tintindex": 0 }
             }
         }
     ]

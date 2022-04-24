@@ -1,1 +1,6 @@
-{ "parent": "item/generated", "textures": { "layer0": "chalk:item/chalk" } }
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "chalk:item/chalk"
+  }
+}
