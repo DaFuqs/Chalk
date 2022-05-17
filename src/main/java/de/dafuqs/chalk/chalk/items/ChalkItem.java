@@ -48,7 +48,8 @@ public class ChalkItem extends Item {
             world.removeBlock(pos, false);
         } else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
             return ActionResult.PASS;
-        } else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) || stack.getItem() != this) {
+        }
+        if (!world.getBlockState(markPosition).getMaterial().isReplaceable()) {
             return ActionResult.PASS;
         }
 
