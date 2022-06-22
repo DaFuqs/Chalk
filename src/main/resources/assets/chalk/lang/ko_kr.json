@@ -3,4 +3,80 @@
   "block.chalk.chalk_mark": "분필 표시",
   "item.chalk.glow_chalk": "발광 분필",
   "block.chalk.glow_chalk_mark": "발광 분필 표시"
+
+  "item.chalk.red_chalk": "빨간색 분필",
+  "block.chalk.red_chalk_mark": "빨간색 분필 표시",
+  "item.chalk.red_glow_chalk": "빨간색 발광 분필",
+  "block.chalk.red_glow_chalk_mark": "빨간색 발광 분필 표시",
+
+  "item.chalk.blue_chalk": "파란색 분필",
+  "block.chalk.blue_chalk_mark": "파란색 분필 표시",
+  "item.chalk.blue_glow_chalk": "파란색 발광 분필",
+  "block.chalk.blue_glow_chalk_mark": "파란색 발광 분필 표시",
+
+  "item.chalk.green_chalk": "초록색 분필",
+  "block.chalk.green_chalk_mark": "초록색 분필 표시",
+  "item.chalk.green_glow_chalk": "초록색 발광 분필",
+  "block.chalk.green_glow_chalk_mark": "초록색 발광 분필 표시",
+
+  "item.chalk.purple_chalk": "보라색 분필",
+  "block.chalk.purple_chalk_mark": "보라색 분필 표시",
+  "item.chalk.purple_glow_chalk": "보라색 발광 분필",
+  "block.chalk.purple_glow_chalk_mark": "보라색 발광 분필 표시",
+
+  "item.chalk.orange_chalk": "주황색 분필",
+  "block.chalk.orange_chalk_mark": "주황색 분필 표시",
+  "item.chalk.orange_glow_chalk": "주황색 발광 분필",
+  "block.chalk.orange_glow_chalk_mark": "주황색 발광 분필 표시",
+
+  "item.chalk.magenta_chalk": "자홍색 분필",
+  "block.chalk.magenta_chalk_mark": "자홍색 분필 표시",
+  "item.chalk.magenta_glow_chalk": "자홍색 발광 분필",
+  "block.chalk.magenta_glow_chalk_mark": "자홍색 발광 분필 표시",
+
+  "item.chalk.light_blue_chalk": "하늘색 분필",
+  "block.chalk.light_blue_chalk_mark": "하늘색 분필 표시",
+  "item.chalk.light_blue_glow_chalk": "하늘색 발광 분필",
+  "block.chalk.light_blue_glow_chalk_mark": "하늘색 발광 분필 표시",
+
+  "item.chalk.yellow_chalk": "노란색 분필",
+  "block.chalk.yellow_chalk_mark": "노란색 분필 표시",
+  "item.chalk.yellow_glow_chalk": "노란색 발광 분필",
+  "block.chalk.yellow_glow_chalk_mark": "노란색 발광 분필 표시",
+
+  "item.chalk.lime_chalk": "연두색 분필",
+  "block.chalk.lime_chalk_mark": "연두색 분필 표시",
+  "item.chalk.lime_glow_chalk": "연두색 발광 분필",
+  "block.chalk.lime_glow_chalk_mark": "연두색 발광 분필 표시",
+
+  "item.chalk.pink_chalk": "분홍색 분필",
+  "block.chalk.pink_chalk_mark": "분홍색 분필 표시",
+  "item.chalk.pink_glow_chalk": "분홍색 발광 분필",
+  "block.chalk.pink_glow_chalk_mark": "분홍색 발광 분필 표시",
+
+  "item.chalk.gray_chalk": "회색 분필",
+  "block.chalk.gray_chalk_mark": "회색 분필 표시",
+  "item.chalk.gray_glow_chalk": "회색 발광 분필",
+  "block.chalk.gray_glow_chalk_mark": "회색 발광 분필 표시",
+
+  "item.chalk.light_gray_chalk": "회백색 분필",
+  "block.chalk.light_gray_chalk_mark": "회백색 분필 표시",
+  "item.chalk.light_gray_glow_chalk": "회백색 발광 분필",
+  "block.chalk.light_gray_glow_chalk_mark": "회백색 발광 분필 표시",
+
+  "item.chalk.cyan_chalk": "청록색 분필",
+  "block.chalk.cyan_chalk_mark": "청록색 분필 표시",
+  "item.chalk.cyan_glow_chalk": "청록색 발광 분필",
+  "block.chalk.cyan_glow_chalk_mark": "청록색 발광 분필 표시",
+
+  "item.chalk.brown_chalk": "갈색 분필",
+  "block.chalk.brown_chalk_mark": "갈색 분필 표시",
+  "item.chalk.brown_glow_chalk": "갈색 발광 분필",
+  "block.chalk.brown_glow_chalk_mark": "갈색 발광 분필 표시",
+
+  "item.chalk.black_chalk": "검은색 분필",
+  "block.chalk.black_chalk_mark": "검은색 분필 표시",
+  "item.chalk.black_glow_chalk": "검은색 발광 분필",
+  "block.chalk.black_glow_chalk_mark": "검은색 Glow 분필 표시"
+
 }
