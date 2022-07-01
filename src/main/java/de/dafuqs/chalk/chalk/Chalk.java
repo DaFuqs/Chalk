@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
@@ -32,8 +33,8 @@ public class Chalk implements ModInitializer {
     private static final Logger LOGGER = LogUtils.getLogger();
     
     public static class ChalkVariant {
-        String colorString;
-        int color;
+        public String colorString;
+        public int color;
         
         public Item chalkItem;
         public Block chalkBlock;
@@ -101,6 +102,11 @@ public class Chalk implements ModInitializer {
     @Override
     public void onInitialize() {
         log("Registering blocks and items...");
+        
+        // colored chalk variants are only added if the colorful addon is installed
+        // this allows chalk to use the "chalk" mod to use the chalk namespace for all functionality
+        // while still having it configurable / backwards compatible
+        boolean colorfulAddonPresent = FabricLoader.getInstance().isModLoaded("chalk-colorful-addon");
     
         ChalkVariant chalkVariant;
         for(DyeColor dyeColor : DyeColor.values()) {
@@ -108,12 +114,14 @@ public class Chalk implements ModInitializer {
             if(dyeColor.equals(DyeColor.WHITE)) {
                 // backwards compatibility
                 chalkVariant = new ChalkVariant(dyeColor, color, "");
-            } else {
+                chalkVariant.register();
+                chalkVariants.put(dyeColor, chalkVariant);
+            } else if(colorfulAddonPresent) {
+                // if colorful addon present
                 chalkVariant = new ChalkVariant(dyeColor, color, dyeColor + "_");
+                chalkVariant.register();
+                chalkVariants.put(dyeColor, chalkVariant);
             }
-            
-            chalkVariant.register();
-            chalkVariants.put(dyeColor, chalkVariant);
         }
         
         log("Startup finished!");
