@@ -14,7 +14,7 @@
     "issues": "https://github.com/DaFuqs/Chalk/issues"
   },
   "license": "MIT",
-  "icon": "assets/chalk/textures/item/chalk.png",
+  "icon": "assets/chalk/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -27,6 +27,7 @@
   "mixins": [],
   "depends": {
     "fabricloader": ">=0.14.8",
-    "minecraft": ">=1.19.0"
+    "minecraft": ">=1.19.0",
+    "fabric": "*"
   }
 }
