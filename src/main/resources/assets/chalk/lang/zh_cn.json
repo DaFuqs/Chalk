@@ -2,5 +2,81 @@
   "item.chalk.chalk": "粉笔",
   "block.chalk.chalk_mark": "粉笔标记",
   "item.chalk.glow_chalk": "荧光粉笔",
-  "block.chalk.glow_chalk_mark": "荧光粉笔标记"
+  "block.chalk.glow_chalk_mark": "荧光粉笔标记",
+
+  "item.chalk.red_chalk": "红色粉笔",
+  "block.chalk.red_chalk_mark": "红色粉笔标记",
+  "item.chalk.red_glow_chalk": "红色荧光粉笔",
+  "block.chalk.red_glow_chalk_mark": "红色荧光粉笔标记",
+
+  "item.chalk.blue_chalk": "蓝色粉笔",
+  "block.chalk.blue_chalk_mark": "蓝色粉笔标记",
+  "item.chalk.blue_glow_chalk": "蓝色荧光粉笔",
+  "block.chalk.blue_glow_chalk_mark": "蓝色荧光粉笔标记",
+
+  "item.chalk.green_chalk": "绿色粉笔",
+  "block.chalk.green_chalk_mark": "绿色粉笔标记",
+  "item.chalk.green_glow_chalk": "绿色荧光粉笔",
+  "block.chalk.green_glow_chalk_mark": "绿色荧光粉笔标记",
+
+  "item.chalk.purple_chalk": "紫色粉笔",
+  "block.chalk.purple_chalk_mark": "紫色粉笔标记",
+  "item.chalk.purple_glow_chalk": "紫色荧光粉笔",
+  "block.chalk.purple_glow_chalk_mark": "紫色荧光粉笔标记",
+
+  "item.chalk.orange_chalk": "橙色粉笔",
+  "block.chalk.orange_chalk_mark": "橙色粉笔标记",
+  "item.chalk.orange_glow_chalk": "橙色荧光粉笔",
+  "block.chalk.orange_glow_chalk_mark": "橙色荧光粉笔标记",
+
+  "item.chalk.magenta_chalk": "品红粉笔",
+  "block.chalk.magenta_chalk_mark": "品红粉笔标记",
+  "item.chalk.magenta_glow_chalk": "品红荧光粉笔",
+  "block.chalk.magenta_glow_chalk_mark": "品红荧光粉笔标记",
+
+  "item.chalk.light_blue_chalk": "淡蓝色粉笔",
+  "block.chalk.light_blue_chalk_mark": "淡蓝色粉笔标记",
+  "item.chalk.light_blue_glow_chalk": "淡蓝色荧光粉笔",
+  "block.chalk.light_blue_glow_chalk_mark": "淡蓝色荧光粉笔标记",
+
+  "item.chalk.yellow_chalk": "黄色粉笔",
+  "block.chalk.yellow_chalk_mark": "黄色粉笔标记",
+  "item.chalk.yellow_glow_chalk": "黄色荧光粉笔",
+  "block.chalk.yellow_glow_chalk_mark": "黄色荧光粉笔标记",
+
+  "item.chalk.lime_chalk": "黄绿色粉笔",
+  "block.chalk.lime_chalk_mark": "黄绿色粉笔标记",
+  "item.chalk.lime_glow_chalk": "黄绿色荧光粉笔",
+  "block.chalk.lime_glow_chalk_mark": "黄绿色荧光粉笔标记",
+
+  "item.chalk.pink_chalk": "粉色粉笔",
+  "block.chalk.pink_chalk_mark": "粉色粉笔标记",
+  "item.chalk.pink_glow_chalk": "粉色荧光粉笔",
+  "block.chalk.pink_glow_chalk_mark": "粉色荧光粉笔标记",
+
+  "item.chalk.gray_chalk": "灰色粉笔",
+  "block.chalk.gray_chalk_mark": "灰色粉笔标记",
+  "item.chalk.gray_glow_chalk": "灰色荧光粉笔",
+  "block.chalk.gray_glow_chalk_mark": "灰色荧光粉笔标记",
+
+  "item.chalk.light_gray_chalk": "淡灰色粉笔",
+  "block.chalk.light_gray_chalk_mark": "淡灰色粉笔标记",
+  "item.chalk.light_gray_glow_chalk": "淡灰色荧光粉笔",
+  "block.chalk.light_gray_glow_chalk_mark": "淡灰色荧光粉笔标记",
+
+  "item.chalk.cyan_chalk": "青色粉笔",
+  "block.chalk.cyan_chalk_mark": "青色粉笔标记",
+  "item.chalk.cyan_glow_chalk": "青色荧光粉笔",
+  "block.chalk.cyan_glow_chalk_mark": "青色荧光粉笔标记",
+
+  "item.chalk.brown_chalk": "棕色粉笔",
+  "block.chalk.brown_chalk_mark": "棕色粉笔标记",
+  "item.chalk.brown_glow_chalk": "棕色荧光粉笔",
+  "block.chalk.brown_glow_chalk_mark": "棕色荧光粉笔标记",
+
+  "item.chalk.black_chalk": "黑色粉笔",
+  "block.chalk.black_chalk_mark": "黑色粉笔标记",
+  "item.chalk.black_glow_chalk": "黑色荧光粉笔",
+  "block.chalk.black_glow_chalk_mark": "黑色荧光粉笔标记"
+
 }
