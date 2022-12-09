@@ -9,18 +9,20 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import org.slf4j.Logger;
 
@@ -43,10 +45,21 @@ public class Chalk implements ModInitializer {
         public ChalkVariant(DyeColor dyeColor, int color, String colorString) {
             this.color = color;
             this.colorString = colorString;
-            this.chalkItem = new ChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), dyeColor);
+            this.chalkItem = new ChalkItem(new FabricItemSettings().maxCount(1).maxDamage(64), dyeColor);
             this.chalkBlock = new ChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL), dyeColor);
-            this.glowChalkItem = new GlowChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), dyeColor);
+            this.glowChalkItem = new GlowChalkItem(new FabricItemSettings().maxCount(1).maxDamage(64), dyeColor);
             this.glowChalkBlock = new GlowChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance(1).postProcess(Chalk::always).emissiveLighting(Chalk::always), dyeColor);
+            this.ItemGroups();
+        }
+
+        /* This method was added by MCLegoMan for the 1.19.3 port. */
+        public void ItemGroups() {
+            /* Chalk ItemGroups: Functional Blocks, Tools and Utilities */
+            ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(this.chalkItem));
+            ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(this.chalkItem));
+            /* Glow Chalk ItemGroups: Functional Blocks, Tools and Utilities */
+            ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(this.glowChalkItem));
+            ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(this.glowChalkItem));
         }
         
         public void register() {
@@ -91,11 +104,11 @@ public class Chalk implements ModInitializer {
     }
 
     private static void registerBlock(String name, Block block) {
-        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
+        Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
     }
 
     private static void registerItem(String name, Item item) {
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, name), item);
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, name), item);
     }
 
     @Override
