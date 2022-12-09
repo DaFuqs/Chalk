@@ -3,6 +3,7 @@ package de.dafuqs.chalk.chalk.util;
 import de.dafuqs.chalk.chalk.Chalk;
 import net.fabricmc.loader.api.FabricLoader;
 
+/* This class was added by MCLegoMan for the 1.19.3 port. */
 public class ChalkLoader {
     public static Boolean isFabric;
     public static Boolean isQuilt;
