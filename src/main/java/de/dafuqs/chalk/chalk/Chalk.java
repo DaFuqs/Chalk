@@ -5,6 +5,7 @@ import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
 import de.dafuqs.chalk.chalk.blocks.GlowChalkMarkBlock;
 import de.dafuqs.chalk.chalk.items.ChalkItem;
 import de.dafuqs.chalk.chalk.items.GlowChalkItem;
+import de.dafuqs.chalk.chalk.util.ChalkLoader;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -113,8 +114,9 @@ public class Chalk implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ChalkLoader.detectLoader();
         log("Registering blocks and items...");
-    
+
         ChalkVariant chalkVariant;
         for(DyeColor dyeColor : DyeColor.values()) {
             int color = dyeColors.get(dyeColor);
