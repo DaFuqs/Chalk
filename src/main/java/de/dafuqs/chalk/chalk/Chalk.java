@@ -116,12 +116,13 @@ public class Chalk implements ModInitializer {
     @Override
     public void onInitialize() {
         ChalkLoader.detectLoader();
+        boolean colorfulAddonPresent = ChalkLoader.isColorfulAddonLoaded();
+        
         log("Registering blocks and items...");
 
         // colored chalk variants are only added if the colorful addon is installed
         // this allows chalk to use the "chalk" mod to use the chalk namespace for all functionality
         // while still having it configurable / backwards compatible
-        boolean colorfulAddonPresent = FabricLoader.getInstance().isModLoaded("chalk-colorful-addon");
 
         ChalkVariant chalkVariant;
         for(DyeColor dyeColor : DyeColor.values()) {
