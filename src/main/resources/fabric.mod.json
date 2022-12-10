@@ -26,9 +26,10 @@
   },
   "mixins": [],
   "depends": {
-    "minecraft": ">=1.19.3"
+    "minecraft": ">=1.19.3",
+    "fabric-api": "*"
   },
   "suggests": {
-    "fabricloader": ">=0.14.11"
+    "fabricloader": "*"
   }
 }
