@@ -29,7 +29,5 @@
     "minecraft": ">=1.19.3",
     "fabric-api": "*"
   },
-  "suggests": {
-    "fabricloader": "*"
-  }
+  "suggests": { }
 }
