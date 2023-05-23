@@ -1,7 +1,8 @@
-package de.dafuqs.chalk.chalk.items;
+package de.dafuqs.chalk.items;
 
-import de.dafuqs.chalk.chalk.Chalk;
-import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
+import de.dafuqs.chalk.Chalk;
+import de.dafuqs.chalk.blocks.ChalkMarkBlock;
+import de.dafuqs.chalk.config.ChalkConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -54,7 +55,7 @@ public class ChalkItem extends Item {
 
         if (world.isClient) {
             Random r = new Random();
-            world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (r.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (r.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
+            if (ChalkConfig.EMIT_PARTICLES) world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (r.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (r.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
             return ActionResult.SUCCESS;
         }
 

@@ -1,6 +1,6 @@
-package de.dafuqs.chalk.chalk.util;
+package de.dafuqs.chalk.util;
 
-import de.dafuqs.chalk.chalk.Chalk;
+import de.dafuqs.chalk.Chalk;
 import net.fabricmc.loader.api.FabricLoader;
 
 /* This class was added by MCLegoMan for the 1.19.3 port. */

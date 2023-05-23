@@ -1,4 +1,4 @@
-package de.dafuqs.chalk.chalk.util;
+package de.dafuqs.chalk.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 
