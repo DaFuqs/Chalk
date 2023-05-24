@@ -8,4 +8,8 @@ public class FabricLoaderAccess {
 		return FabricLoader.getInstance().isModLoaded("chalk-colorful-addon");
 	}
 	
+	public static boolean isContinuityLoaded() {
+		return FabricLoader.getInstance().isModLoaded("continuity");
+	}
+	
 }

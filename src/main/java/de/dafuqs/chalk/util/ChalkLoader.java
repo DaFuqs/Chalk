@@ -35,4 +35,11 @@ public class ChalkLoader {
 		return false;
 	}
 	
+	public static boolean isContinuityLoaded() {
+		if (isFabric || isQuilt) {
+			return FabricLoaderAccess.isContinuityLoaded();
+		}
+		return false;
+	}
+	
 }

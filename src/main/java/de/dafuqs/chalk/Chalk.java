@@ -48,7 +48,11 @@ public class Chalk implements ModInitializer {
 			this.chalkItem = new ChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
 			this.chalkBlock = new ChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).pistonBehavior(PistonBehavior.DESTROY), dyeColor);
 			this.glowChalkItem = new GlowChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 1).postProcess(Chalk::always).emissiveLighting(Chalk::always).pistonBehavior(PistonBehavior.DESTROY), dyeColor);
+			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL)
+					.luminance((state) -> ChalkLoader.isContinuityLoaded() ? 0 : 1)
+					.postProcess(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always)
+					.emissiveLighting(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always)
+					.pistonBehavior(PistonBehavior.DESTROY), dyeColor);
 			this.ItemGroups();
 		}
 		
@@ -101,6 +105,10 @@ public class Chalk implements ModInitializer {
 	
 	private static boolean always(BlockState blockState, BlockView blockView, BlockPos blockPos) {
 		return true;
+	}
+	
+	private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
+		return false;
 	}
 	
 	private static void registerBlock(String name, Block block) {
