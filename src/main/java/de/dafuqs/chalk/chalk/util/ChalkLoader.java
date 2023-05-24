@@ -1,7 +1,7 @@
 package de.dafuqs.chalk.chalk.util;
 
-import de.dafuqs.chalk.chalk.Chalk;
-import net.fabricmc.loader.api.FabricLoader;
+import de.dafuqs.chalk.chalk.*;
+import net.fabricmc.loader.api.*;
 
 /* This class was added by MCLegoMan for the 1.19.3 port. */
 public class ChalkLoader {
@@ -31,6 +31,13 @@ public class ChalkLoader {
 	public static boolean isColorfulAddonLoaded() {
 		if (isFabric || isQuilt) {
 			return FabricLoaderAccess.isColorfulAddonLoaded();
+		}
+		return false;
+	}
+	
+	public static boolean isContinuityLoaded() {
+		if (isFabric || isQuilt) {
+			return FabricLoaderAccess.isContinuityLoaded();
 		}
 		return false;
 	}

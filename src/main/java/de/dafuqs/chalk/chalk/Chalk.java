@@ -1,32 +1,24 @@
 package de.dafuqs.chalk.chalk;
 
-import com.mojang.logging.LogUtils;
-import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
-import de.dafuqs.chalk.chalk.blocks.GlowChalkMarkBlock;
-import de.dafuqs.chalk.chalk.items.ChalkItem;
-import de.dafuqs.chalk.chalk.items.GlowChalkItem;
-import de.dafuqs.chalk.chalk.util.ChalkLoader;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import org.slf4j.Logger;
+import com.mojang.logging.*;
+import de.dafuqs.chalk.chalk.blocks.*;
+import de.dafuqs.chalk.chalk.items.*;
+import de.dafuqs.chalk.chalk.util.*;
+import net.fabricmc.api.*;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.*;
+import net.fabricmc.fabric.api.client.rendering.v1.*;
+import net.fabricmc.fabric.api.itemgroup.v1.*;
+import net.minecraft.block.*;
+import net.minecraft.client.render.*;
+import net.minecraft.item.*;
+import net.minecraft.registry.*;
+import net.minecraft.sound.*;
+import net.minecraft.util.*;
+import net.minecraft.util.math.*;
+import net.minecraft.world.*;
+import org.slf4j.*;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Chalk implements ModInitializer {
 	
@@ -48,7 +40,10 @@ public class Chalk implements ModInitializer {
 			this.chalkItem = new ChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
 			this.chalkBlock = new ChalkMarkBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL), dyeColor);
 			this.glowChalkItem = new GlowChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 1).postProcess(Chalk::always).emissiveLighting(Chalk::always), dyeColor);
+			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL)
+					.luminance((state) -> ChalkLoader.isContinuityLoaded() ? 0 : 1)
+					.postProcess(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always)
+					.emissiveLighting(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always), dyeColor);
 			this.ItemGroups();
 		}
 		
@@ -101,6 +96,10 @@ public class Chalk implements ModInitializer {
 	
 	private static boolean always(BlockState blockState, BlockView blockView, BlockPos blockPos) {
 		return true;
+	}
+	
+	private static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
+		return false;
 	}
 	
 	private static void registerBlock(String name, Block block) {
