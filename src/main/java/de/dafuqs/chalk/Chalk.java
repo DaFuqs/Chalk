@@ -1,11 +1,11 @@
-package de.dafuqs.chalk.chalk;
+package de.dafuqs.chalk;
 
 import com.mojang.logging.LogUtils;
-import de.dafuqs.chalk.chalk.blocks.ChalkMarkBlock;
-import de.dafuqs.chalk.chalk.blocks.GlowChalkMarkBlock;
-import de.dafuqs.chalk.chalk.items.ChalkItem;
-import de.dafuqs.chalk.chalk.items.GlowChalkItem;
-import de.dafuqs.chalk.chalk.util.ChalkLoader;
+import de.dafuqs.chalk.blocks.ChalkMarkBlock;
+import de.dafuqs.chalk.blocks.GlowChalkMarkBlock;
+import de.dafuqs.chalk.items.ChalkItem;
+import de.dafuqs.chalk.items.GlowChalkItem;
+import de.dafuqs.chalk.util.ChalkLoader;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -13,7 +13,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -46,9 +46,9 @@ public class Chalk implements ModInitializer {
 			this.color = color;
 			this.colorString = colorString;
 			this.chalkItem = new ChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.chalkBlock = new ChalkMarkBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL), dyeColor);
+			this.chalkBlock = new ChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).pistonBehavior(PistonBehavior.DESTROY), dyeColor);
 			this.glowChalkItem = new GlowChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 1).postProcess(Chalk::always).emissiveLighting(Chalk::always), dyeColor);
+			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).luminance((state) -> 1).postProcess(Chalk::always).emissiveLighting(Chalk::always).pistonBehavior(PistonBehavior.DESTROY), dyeColor);
 			this.ItemGroups();
 		}
 		

@@ -8,6 +8,9 @@
     "DaFuqs",
     "mortuusars"
   ],
+  "contributors": [
+    "MCLegoMan"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/chalk-fabric",
     "sources": "https://github.com/DaFuqs/Chalk",
@@ -18,15 +21,15 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "de.dafuqs.chalk.chalk.ChalkClient"
+      "de.dafuqs.chalk.ChalkClient"
     ],
     "main": [
-      "de.dafuqs.chalk.chalk.Chalk"
+      "de.dafuqs.chalk.Chalk"
     ]
   },
   "mixins": [],
   "depends": {
-    "minecraft": ">=1.19.3",
+    "minecraft": "~1.20-beta",
     "fabric-api": "*"
   },
   "suggests": { }
