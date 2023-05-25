@@ -1,6 +1,6 @@
 package de.dafuqs.chalk.util;
 
-import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.*;
 
 public class FabricLoaderAccess {
 	

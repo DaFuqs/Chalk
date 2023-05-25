@@ -1,41 +1,37 @@
 package de.dafuqs.chalk;
 
-import com.mojang.logging.LogUtils;
-import de.dafuqs.chalk.blocks.ChalkMarkBlock;
-import de.dafuqs.chalk.blocks.GlowChalkMarkBlock;
-import de.dafuqs.chalk.items.ChalkItem;
-import de.dafuqs.chalk.items.GlowChalkItem;
-import de.dafuqs.chalk.util.ChalkLoader;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import org.slf4j.Logger;
+import com.mojang.logging.*;
+import de.dafuqs.chalk.chalk.blocks.*;
+import de.dafuqs.chalk.chalk.items.*;
+import de.dafuqs.chalk.util.*;
+import net.fabricmc.api.*;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.*;
+import net.fabricmc.fabric.api.client.rendering.v1.*;
+import net.fabricmc.fabric.api.item.v1.*;
+import net.fabricmc.fabric.api.object.builder.v1.block.*;
+import net.minecraft.block.*;
+import net.minecraft.client.render.*;
+import net.minecraft.item.*;
+import net.minecraft.sound.*;
+import net.minecraft.util.*;
+import net.minecraft.util.math.*;
+import net.minecraft.util.registry.*;
+import net.minecraft.world.*;
+import org.slf4j.*;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Chalk implements ModInitializer {
 	
 	public static final String MOD_ID = "chalk";
 	private static final Logger LOGGER = LogUtils.getLogger();
 	
+	public static boolean colorfulAddonPresent;
+	public static boolean continuityLoaded;
+	
 	public static class ChalkVariant {
-		String colorString;
-		int color;
+		public String colorString;
+		public int color;
 		
 		public Item chalkItem;
 		public Block chalkBlock;
@@ -45,25 +41,13 @@ public class Chalk implements ModInitializer {
 		public ChalkVariant(DyeColor dyeColor, int color, String colorString) {
 			this.color = color;
 			this.colorString = colorString;
-			this.chalkItem = new ChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.chalkBlock = new ChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL).pistonBehavior(PistonBehavior.DESTROY), dyeColor);
-			this.glowChalkItem = new GlowChalkItem(new Item.Settings().maxCount(1).maxDamage(64), dyeColor);
-			this.glowChalkBlock = new GlowChalkMarkBlock(AbstractBlock.Settings.create().replaceable().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL)
-					.luminance((state) -> ChalkLoader.isContinuityLoaded() ? 0 : 1)
-					.postProcess(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always)
-					.emissiveLighting(ChalkLoader.isContinuityLoaded() ? Chalk::never : Chalk::always)
-					.pistonBehavior(PistonBehavior.DESTROY), dyeColor);
-			this.ItemGroups();
-		}
-		
-		/* This method was added by MCLegoMan for the 1.19.3 port. */
-		public void ItemGroups() {
-			/* Chalk ItemGroups: Functional Blocks, Tools and Utilities */
-			ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(this.chalkItem));
-			ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(this.chalkItem));
-			/* Glow Chalk ItemGroups: Functional Blocks, Tools and Utilities */
-			ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(this.glowChalkItem));
-			ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(this.glowChalkItem));
+			this.chalkItem = new ChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), dyeColor);
+			this.chalkBlock = new ChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL), dyeColor);
+			this.glowChalkItem = new GlowChalkItem(new FabricItemSettings().group(ItemGroup.TOOLS).maxCount(1).maxDamage(64), dyeColor);
+			this.glowChalkBlock = new GlowChalkMarkBlock(FabricBlockSettings.of(Material.REPLACEABLE_PLANT).breakInstantly().noCollision().nonOpaque().sounds(BlockSoundGroup.GRAVEL)
+					.luminance((state) -> continuityLoaded ? 0 : 1)
+					.postProcess(continuityLoaded ? Chalk::never : Chalk::always)
+					.emissiveLighting(continuityLoaded ? Chalk::never : Chalk::always), dyeColor);
 		}
 		
 		public void register() {
@@ -112,34 +96,34 @@ public class Chalk implements ModInitializer {
 	}
 	
 	private static void registerBlock(String name, Block block) {
-		Registry.register(Registries.BLOCK, new Identifier(MOD_ID, name), block);
+		Registry.register(Registry.BLOCK, new Identifier(MOD_ID, name), block);
 	}
 	
 	private static void registerItem(String name, Item item) {
-		Registry.register(Registries.ITEM, new Identifier(MOD_ID, name), item);
+		Registry.register(Registry.ITEM, new Identifier(MOD_ID, name), item);
 	}
 	
 	@Override
 	public void onInitialize() {
-		ChalkLoader.detectLoader();
-		boolean colorfulAddonPresent = ChalkLoader.isColorfulAddonLoaded();
-		
 		log("Registering blocks and items...");
+		
+		ChalkLoader.detectLoader();
+		colorfulAddonPresent = ChalkLoader.isColorfulAddonLoaded();
+		continuityLoaded = ChalkLoader.isContinuityLoaded();
 		
 		// colored chalk variants are only added if the colorful addon is installed
 		// this allows chalk to use the "chalk" mod to use the chalk namespace for all functionality
 		// while still having it configurable / backwards compatible
-		
 		ChalkVariant chalkVariant;
-		for (DyeColor dyeColor : DyeColor.values()) {
+		for(DyeColor dyeColor : DyeColor.values()) {
 			int color = dyeColors.get(dyeColor);
-			if (dyeColor.equals(DyeColor.WHITE)) {
+			if(dyeColor.equals(DyeColor.WHITE)) {
 				// backwards compatibility
 				chalkVariant = new ChalkVariant(dyeColor, color, "");
 				chalkVariant.register();
 				chalkVariants.put(dyeColor, chalkVariant);
-			} else if (colorfulAddonPresent) {
-				// if colourful addon present
+			} else if(colorfulAddonPresent) {
+				// if colorful addon present
 				chalkVariant = new ChalkVariant(dyeColor, color, dyeColor + "_");
 				chalkVariant.register();
 				chalkVariants.put(dyeColor, chalkVariant);
