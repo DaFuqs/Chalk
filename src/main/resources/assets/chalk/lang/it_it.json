@@ -2,5 +2,81 @@
   "item.chalk.chalk": "Gesso",
   "block.chalk.chalk_mark": "Segno di gesso",
   "item.chalk.glow_chalk": "Gesso luminescente",
-  "block.chalk.glow_chalk_mark": "Segno di gesso luminescente"
+  "block.chalk.glow_chalk_mark": "Segno di gesso luminescente",
+  
+  "item.chalk.red_chalk": "Gesso rosso",
+  "block.chalk.red_chalk_mark": "Segno di gesso rosso",
+  "item.chalk.red_glow_chalk": "Gesso rosso luminescente",
+  "block.chalk.red_glow_chalk_mark": "Segno di gesso rosso luminescente",
+
+  "item.chalk.blue_chalk": "Gesso blu",
+  "block.chalk.blue_chalk_mark": "Segno di gesso blu",
+  "item.chalk.blue_glow_chalk": "Gesso blu luminescente",
+  "block.chalk.blue_glow_chalk_mark": "Segno di gesso blu luminescente",
+
+  "item.chalk.green_chalk": "Gesso verde",
+  "block.chalk.green_chalk_mark": "Segno di gesso verde",
+  "item.chalk.green_glow_chalk": "Gesso verde luminescente",
+  "block.chalk.green_glow_chalk_mark": "Segno di gesso verde luminescente",
+
+  "item.chalk.purple_chalk": "Gesso viola",
+  "block.chalk.purple_chalk_mark": "Segno di gesso viola",
+  "item.chalk.purple_glow_chalk": "Gesso viola luminescente",
+  "block.chalk.purple_glow_chalk_mark": "Segno di gesso viola luminescente",
+
+  "item.chalk.orange_chalk": "Gesso arancione",
+  "block.chalk.orange_chalk_mark": "Segno di gesso arancione",
+  "item.chalk.orange_glow_chalk": "Gesso arancione luminescente",
+  "block.chalk.orange_glow_chalk_mark": "Segno di gesso arancione luminescente",
+
+  "item.chalk.magenta_chalk": "Gesso magenta",
+  "block.chalk.magenta_chalk_mark": "Segno di gesso magenta",
+  "item.chalk.magenta_glow_chalk": "Gesso magenta luminescente",
+  "block.chalk.magenta_glow_chalk_mark": "Segno di gesso magenta luminescente",
+
+  "item.chalk.light_blue_chalk": "Gesso azzurro",
+  "block.chalk.light_blue_chalk_mark": "Segno di gesso azzurro",
+  "item.chalk.light_blue_glow_chalk": "Gesso azzurro luminescente",
+  "block.chalk.light_blue_glow_chalk_mark": "Segno di gesso azzurro luminescente",
+
+  "item.chalk.yellow_chalk": "Gesso giallo",
+  "block.chalk.yellow_chalk_mark": "Segno di gesso giallo",
+  "item.chalk.yellow_glow_chalk": "Gesso giallo luminescente",
+  "block.chalk.yellow_glow_chalk_mark": "Segno di gesso giallo luminescente",
+
+  "item.chalk.lime_chalk": "Gesso lime",
+  "block.chalk.lime_chalk_mark": "Segno di gesso lime",
+  "item.chalk.lime_glow_chalk": "Gesso lime luminescente",
+  "block.chalk.lime_glow_chalk_mark": "Segno di gesso lime luminescente",
+
+  "item.chalk.pink_chalk": "Gesso rosa",
+  "block.chalk.pink_chalk_mark": "Segno di gesso rosa",
+  "item.chalk.pink_glow_chalk": "Gesso rosa luminescente",
+  "block.chalk.pink_glow_chalk_mark": "Segno di gesso rosa luminescente",
+
+  "item.chalk.gray_chalk": "Gesso grigio",
+  "block.chalk.gray_chalk_mark": "Segno di gesso grigio",
+  "item.chalk.gray_glow_chalk": "Gesso grigio luminescente",
+  "block.chalk.gray_glow_chalk_mark": "Segno di gesso grigio luminescente",
+
+  "item.chalk.light_gray_chalk": "Gesso grigio chiaro",
+  "block.chalk.light_gray_chalk_mark": "Segno di gesso grigio chiaro",
+  "item.chalk.light_gray_glow_chalk": "Gesso grigio chiaro luminescente",
+  "block.chalk.light_gray_glow_chalk_mark": "Segno di gesso grigio chiaro luminescente",
+
+  "item.chalk.cyan_chalk": "Gesso ciano",
+  "block.chalk.cyan_chalk_mark": "Segno di gesso ciano",
+  "item.chalk.cyan_glow_chalk": "Gesso ciano luminescente",
+  "block.chalk.cyan_glow_chalk_mark": "Segno di gesso ciano luminescente",
+
+  "item.chalk.brown_chalk": "Gesso marrone",
+  "block.chalk.brown_chalk_mark": "Segno di gesso marrone",
+  "item.chalk.brown_glow_chalk": "Gesso marrone luminescente",
+  "block.chalk.brown_glow_chalk_mark": "Segno di gesso marrone luminescente",
+
+  "item.chalk.black_chalk": "Gesso nero",
+  "block.chalk.black_chalk_mark": "Segno di gesso nero",
+  "item.chalk.black_glow_chalk": "Gesso nero luminescente",
+  "block.chalk.black_glow_chalk_mark": "Segno di gesso nero luminescente"
+  
 }
