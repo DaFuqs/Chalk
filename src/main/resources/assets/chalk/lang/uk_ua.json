@@ -1,0 +1,82 @@
+{
+  "item.chalk.chalk": "Крейда",
+  "block.chalk.chalk_mark": "Крейдова позначка",
+  "item.chalk.glow_chalk": "Сяйна крейда",
+  "block.chalk.glow_chalk_mark": "Сяйна крейдова позначка",
+
+  "item.chalk.red_chalk": "Червона крейда",
+  "block.chalk.red_chalk_mark": "Червона крейдова позначка",
+  "item.chalk.red_glow_chalk": "Червона сяйна крейда",
+  "block.chalk.red_glow_chalk_mark": "Червона сяйна крейдова позначка",
+
+  "item.chalk.blue_chalk": "Синя крейда",
+  "block.chalk.blue_chalk_mark": "Синя крейдова позначка",
+  "item.chalk.blue_glow_chalk": "Синя сяйна крейда",
+  "block.chalk.blue_glow_chalk_mark": "Синя сяйна крейдова позначка",
+
+  "item.chalk.green_chalk": "Зелена крейда",
+  "block.chalk.green_chalk_mark": "Зелена крейдова позначка",
+  "item.chalk.green_glow_chalk": "Зелена сяйна крейда",
+  "block.chalk.green_glow_chalk_mark": "Зелена сяйна крейдова позначка",
+
+  "item.chalk.purple_chalk": "Фіолетова крейда",
+  "block.chalk.purple_chalk_mark": "Фіолетова крейдова позначка",
+  "item.chalk.purple_glow_chalk": "Фіолетова сяйна крейда",
+  "block.chalk.purple_glow_chalk_mark": "Фіолетова сяйна крейдова позначка",
+
+  "item.chalk.orange_chalk": "Помаранчева крейда",
+  "block.chalk.orange_chalk_mark": "Помаранчева крейдова позначка",
+  "item.chalk.orange_glow_chalk": "Помаранчева сяйна крейда",
+  "block.chalk.orange_glow_chalk_mark": "Помаранчева сяйна крейдова позначка",
+
+  "item.chalk.magenta_chalk": "Пурпурова крейда",
+  "block.chalk.magenta_chalk_mark": "Пурпурова крейдова позначка",
+  "item.chalk.magenta_glow_chalk": "Пурпурова сяйна крейда",
+  "block.chalk.magenta_glow_chalk_mark": "Пурпурова сяйна крейдова позначка",
+
+  "item.chalk.light_blue_chalk": "Блакитна крейда",
+  "block.chalk.light_blue_chalk_mark": "Блакитна крейдова позначка",
+  "item.chalk.light_blue_glow_chalk": "Блакитна сяйна крейда",
+  "block.chalk.light_blue_glow_chalk_mark": "Блакитна сяйна крейдова позначка",
+
+  "item.chalk.yellow_chalk": "Жовта крейда",
+  "block.chalk.yellow_chalk_mark": "Жовта крейдова позначка",
+  "item.chalk.yellow_glow_chalk": "Жовта сяйна крейда",
+  "block.chalk.yellow_glow_chalk_mark": "Жовта сяйна крейдова позначка",
+
+  "item.chalk.lime_chalk": "Лаймова крейда",
+  "block.chalk.lime_chalk_mark": "Лаймова крейдова позначка",
+  "item.chalk.lime_glow_chalk": "Лаймова сяйна крейда",
+  "block.chalk.lime_glow_chalk_mark": "Лаймова сяйна крейдова позначка",
+
+  "item.chalk.pink_chalk": "Рожева крейда",
+  "block.chalk.pink_chalk_mark": "Рожева крейдова позначка",
+  "item.chalk.pink_glow_chalk": "Рожева сяйна крейда",
+  "block.chalk.pink_glow_chalk_mark": "Рожева сяйна крейдова позначка",
+
+  "item.chalk.gray_chalk": "Сіра крейда",
+  "block.chalk.gray_chalk_mark": "Сіра крейдова позначка",
+  "item.chalk.gray_glow_chalk": "Сіра сяйна крейда",
+  "block.chalk.gray_glow_chalk_mark": "Сіра сяйна крейдова позначка",
+
+  "item.chalk.light_gray_chalk": "Світло-сіра крейда",
+  "block.chalk.light_gray_chalk_mark": "Світло-сіра крейдова позначка",
+  "item.chalk.light_gray_glow_chalk": "Світло-сіра сяйна крейда",
+  "block.chalk.light_gray_glow_chalk_mark": "Світло-сіра сяйна крейдова позначка",
+
+  "item.chalk.cyan_chalk": "Бірюзова крейда",
+  "block.chalk.cyan_chalk_mark": "Бірюзова крейдова позначка",
+  "item.chalk.cyan_glow_chalk": "Бірюзова сяйна крейда",
+  "block.chalk.cyan_glow_chalk_mark": "Бірюзова сяйна крейдова позначка",
+
+  "item.chalk.brown_chalk": "Коричнева крейда",
+  "block.chalk.brown_chalk_mark": "Коричнева крейдова позначка",
+  "item.chalk.brown_glow_chalk": "Коричнева сяйна крейда",
+  "block.chalk.brown_glow_chalk_mark": "Коричнева сяйна крейдова позначка",
+
+  "item.chalk.black_chalk": "Чорна крейда",
+  "block.chalk.black_chalk_mark": "Чорна крейдова позначка",
+  "item.chalk.black_glow_chalk": "Чорна сяйна крейда",
+  "block.chalk.black_glow_chalk_mark": "Чорна сяйна крейдова позначка"
+
+}
