@@ -1,0 +1,82 @@
+{
+  "item.chalk.chalk": "Křída",
+  "block.chalk.chalk_mark": "Křídová známka",
+  "item.chalk.glow_chalk": "Světélkující křída",
+  "block.chalk.glow_chalk_mark": "Světélkující křídová známka",
+
+  "item.chalk.red_chalk": "Červená křída",
+  "block.chalk.red_chalk_mark": "Červená křídová známka",
+  "item.chalk.red_glow_chalk": "Červená světélkující křída",
+  "block.chalk.red_glow_chalk_mark": "Červená světélkující křídová známka",
+
+  "item.chalk.blue_chalk": "Modrá křída",
+  "block.chalk.blue_chalk_mark": "Modrá křídová známka",
+  "item.chalk.blue_glow_chalk": "Modrá světélkující křída",
+  "block.chalk.blue_glow_chalk_mark": "Modrá světélkující křídová známka",
+
+  "item.chalk.green_chalk": "Zelená křída",
+  "block.chalk.green_chalk_mark": "Zelená křídová známka",
+  "item.chalk.green_glow_chalk": "Zelená světélkující křída",
+  "block.chalk.green_glow_chalk_mark": "Zelená světélkující křídová známka",
+
+  "item.chalk.purple_chalk": "Fialová křída",
+  "block.chalk.purple_chalk_mark": "Fialová křídová známka",
+  "item.chalk.purple_glow_chalk": "Fialová světélkující křída",
+  "block.chalk.purple_glow_chalk_mark": "Fialová světélkující křídová známka",
+
+  "item.chalk.orange_chalk": "Oranžová křída",
+  "block.chalk.orange_chalk_mark": "Oranžová křídová známka",
+  "item.chalk.orange_glow_chalk": "Oranžová světélkující křída",
+  "block.chalk.orange_glow_chalk_mark": "Oranžová světélkující křídová známka",
+
+  "item.chalk.magenta_chalk": "Purpurová křída",
+  "block.chalk.magenta_chalk_mark": "Purpurová křídová známka",
+  "item.chalk.magenta_glow_chalk": "Purpurová světélkující křída",
+  "block.chalk.magenta_glow_chalk_mark": "Purpurová světélkující křídová známka",
+
+  "item.chalk.light_blue_chalk": "Světle modrá křída",
+  "block.chalk.light_blue_chalk_mark": "Světle modrá křídová známka",
+  "item.chalk.light_blue_glow_chalk": "Světle modrá světélkující křída",
+  "block.chalk.light_blue_glow_chalk_mark": "Světle modrá světélkující křídová známka",
+
+  "item.chalk.yellow_chalk": "Žlutá křída",
+  "block.chalk.yellow_chalk_mark": "Žlutá křídová známka",
+  "item.chalk.yellow_glow_chalk": "Žlutá světélkující křída",
+  "block.chalk.yellow_glow_chalk_mark": "Žlutá světélkující křídová známka",
+
+  "item.chalk.lime_chalk": "Světle zelená křída",
+  "block.chalk.lime_chalk_mark": "Světle zelená křídová známka",
+  "item.chalk.lime_glow_chalk": "Světle zelená světélkující křída",
+  "block.chalk.lime_glow_chalk_mark": "Světle zelená světélkující křídová známka",
+
+  "item.chalk.pink_chalk": "Růžová křída",
+  "block.chalk.pink_chalk_mark": "Růžová křídová známka",
+  "item.chalk.pink_glow_chalk": "Růžová světélkující křída",
+  "block.chalk.pink_glow_chalk_mark": "Růžová světélkující křídová známka",
+
+  "item.chalk.gray_chalk": "Šedá křída",
+  "block.chalk.gray_chalk_mark": "Šedá křídová známka",
+  "item.chalk.gray_glow_chalk": "Šedá světélkující křída",
+  "block.chalk.gray_glow_chalk_mark": "Šedá světélkující křídová známka",
+
+  "item.chalk.light_gray_chalk": "Světle šedá křída",
+  "block.chalk.light_gray_chalk_mark": "Světle šedá křídová známka",
+  "item.chalk.light_gray_glow_chalk": "Světle šedá světélkující křída",
+  "block.chalk.light_gray_glow_chalk_mark": "Světle šedá světélkující křídová známka",
+
+  "item.chalk.cyan_chalk": "Azurová křída",
+  "block.chalk.cyan_chalk_mark": "Azurová křídová známka",
+  "item.chalk.cyan_glow_chalk": "Azurová světélkující křída",
+  "block.chalk.cyan_glow_chalk_mark": "Azurová světélkující křídová známka",
+
+  "item.chalk.brown_chalk": "Hnědá křída",
+  "block.chalk.brown_chalk_mark": "Hnědá křídová známka",
+  "item.chalk.brown_glow_chalk": "Hnědá světélkující křída",
+  "block.chalk.brown_glow_chalk_mark": "Hnědá světélkující křídová známka",
+
+  "item.chalk.black_chalk": "Černá křída",
+  "block.chalk.black_chalk_mark": "Černá křídová známka",
+  "item.chalk.black_glow_chalk": "Černá světélkující křída",
+  "block.chalk.black_glow_chalk_mark": "Černá světélkující křídová známka"
+
+}
