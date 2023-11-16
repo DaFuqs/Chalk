@@ -21,15 +21,18 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "de.dafuqs.chalk.ChalkClient"
+      "de.dafuqs.chalk.client.ChalkClient"
     ],
     "main": [
-      "de.dafuqs.chalk.Chalk"
+      "de.dafuqs.chalk.common.Chalk"
+    ],
+    "modmenu": [
+      "de.dafuqs.chalk.compat.ChalkModMenu"
     ]
   },
   "mixins": [],
   "depends": {
-    "minecraft": "~1.20-beta",
+    "minecraft": "~1.20",
     "fabric-api": "*"
   },
   "suggests": { }

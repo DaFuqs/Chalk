@@ -1,7 +1,7 @@
-package de.dafuqs.chalk.blocks;
+package de.dafuqs.chalk.common.blocks;
 
-import de.dafuqs.chalk.Chalk;
-import de.dafuqs.chalk.config.ChalkConfig;
+import de.dafuqs.chalk.client.config.ConfigHelper;
+import de.dafuqs.chalk.common.ChalkRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,9 +32,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Random;
 
 public class ChalkMarkBlock extends Block {
-    
+
     protected DyeColor dyeColor;
-    
+
     public static final DirectionProperty FACING = Properties.FACING;
     public static final IntProperty ORIENTATION = IntProperty.of("orientation", 0, 8);
 
@@ -69,7 +69,7 @@ public class ChalkMarkBlock extends Block {
 
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return Chalk.chalkVariants.get(dyeColor).chalkItem.getDefaultStack();
+        return ChalkRegistry.chalkVariants.get(dyeColor).chalkItem.getDefaultStack();
     }
 
     @Override
@@ -78,7 +78,8 @@ public class ChalkMarkBlock extends Block {
             world.playSound(null, pos, SoundEvents.BLOCK_WART_BLOCK_HIT, SoundCategory.BLOCKS, 0.5f, new Random().nextFloat() * 0.2f + 0.8f);
         else{
             Random r = new Random();
-            if (ChalkConfig.EMIT_PARTICLES) world.addParticle(ParticleTypes.CLOUD,  pos.getX() + (0.5 * (r.nextFloat() + 0.15)), pos.getY() + 0.3, pos.getZ() + (0.5 * (r.nextFloat() + 0.15)), 0.0D, 0.0D, 0.0D);
+            if ((boolean) ConfigHelper.getConfig("emit_particles"))
+                world.addParticle(ParticleTypes.CLOUD, pos.getX() + (0.5 * (r.nextFloat() + 0.15)), pos.getY() + 0.3, pos.getZ() + (0.5 * (r.nextFloat() + 0.15)), 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -118,9 +119,4 @@ public class ChalkMarkBlock extends Block {
         }
         return state;
     }
-    
-    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
-        return true;
-    }
-
 }
