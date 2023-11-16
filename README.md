@@ -2,7 +2,7 @@
 Download from [Curseforge](https://www.curseforge.com/minecraft/mc-mods/chalk-fabric) or [Modrinth](https://modrinth.com/mod/chalk).  
 Looking for the Forge version? [Click Here](https://modrinth.com/mod/chalk-mod).  
 
-![Chalk](./images/chalk.png "Chalk")
+![Chalk](./images/chalk_sculk.png "Chalk")
 
 Fabric/Quilt Loader port of the Minecraft mod [Chalk](https://github.com/mortuusars/Chalk) by mortuusars with some additions and 1.17+ adjustments.  
 
