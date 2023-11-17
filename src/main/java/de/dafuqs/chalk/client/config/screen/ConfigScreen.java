@@ -114,6 +114,10 @@ public class ConfigScreen extends Screen {
 	}
 
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+		// 1.20 and 1.20.1
+		//this.renderBackground(context);
+		// 1.20.2 - Not required as it gets rendered by the Screen.class:render() function.
+		//this.renderBackground(context, mouseX, mouseY, delta);
 		super.render(context, mouseX, mouseY, delta);
 	}
 }
