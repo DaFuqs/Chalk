@@ -1,6 +1,6 @@
-package de.dafuqs.chalk.blocks;
+package de.dafuqs.chalk.common.blocks;
 
-import de.dafuqs.chalk.Chalk;
+import de.dafuqs.chalk.common.ChalkRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DyeColor;
@@ -15,7 +15,7 @@ public class GlowChalkMarkBlock extends ChalkMarkBlock {
     
     @Override
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return Chalk.chalkVariants.get(dyeColor).glowChalkItem.getDefaultStack();
+        return ChalkRegistry.chalkVariants.get(dyeColor).glowChalkItem.getDefaultStack();
     }
 
 }
