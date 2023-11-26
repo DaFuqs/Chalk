@@ -1,0 +1,92 @@
+{
+  "item.chalk.chalk": "Kréta",
+  "block.chalk.chalk_mark": "Krétajel",
+  "item.chalk.glow_chalk": "Világító kréta",
+  "block.chalk.glow_chalk_mark": "Világító krétajel",
+
+  "item.chalk.red_chalk": "Piros kréta",
+  "block.chalk.red_chalk_mark": "Piros krétajel",
+  "item.chalk.red_glow_chalk": "Világító piros kréta",
+  "block.chalk.red_glow_chalk_mark": "Világító piros krétajel",
+
+  "item.chalk.blue_chalk": "Kék kréta",
+  "block.chalk.blue_chalk_mark": "Kék krétajel",
+  "item.chalk.blue_glow_chalk": "Világító kék kréta",
+  "block.chalk.blue_glow_chalk_mark": "Világító kék krétajel",
+
+  "item.chalk.green_chalk": "Zöld kréta",
+  "block.chalk.green_chalk_mark": "Zöld krétajel",
+  "item.chalk.green_glow_chalk": "Zöld kréta",
+  "block.chalk.green_glow_chalk_mark": "Zöld krétajel",
+
+  "item.chalk.purple_chalk": "Lila kréta",
+  "block.chalk.purple_chalk_mark": "Lila krétajel",
+  "item.chalk.purple_glow_chalk": "Lila kréta",
+  "block.chalk.purple_glow_chalk_mark": "Lila krétajel",
+
+  "item.chalk.orange_chalk": "Narancssárga kréta",
+  "block.chalk.orange_chalk_mark": "Narancssárga krétajel",
+  "item.chalk.orange_glow_chalk": "Világító narancssárga kréta",
+  "block.chalk.orange_glow_chalk_mark": "Világító narancssárga krétajel",
+
+  "item.chalk.magenta_chalk": "Magenta kréta",
+  "block.chalk.magenta_chalk_mark": "Magenta krétajel",
+  "item.chalk.magenta_glow_chalk": "Világító magenta kréta",
+  "block.chalk.magenta_glow_chalk_mark": "Világító magenta krétajel",
+
+  "item.chalk.light_blue_chalk": "Világoskék kréta",
+  "block.chalk.light_blue_chalk_mark": "Világoskék krétajel",
+  "item.chalk.light_blue_glow_chalk": "Világító világoskék kréta",
+  "block.chalk.light_blue_glow_chalk_mark": "Világító világoskék krétajel",
+
+  "item.chalk.yellow_chalk": "Sárga kréta",
+  "block.chalk.yellow_chalk_mark": "Sárga krétajel",
+  "item.chalk.yellow_glow_chalk": "Világító sárga kréta",
+  "block.chalk.yellow_glow_chalk_mark": "Világító sárga krétajel",
+
+  "item.chalk.lime_chalk": "Világoszöld kréta",
+  "block.chalk.lime_chalk_mark": "Világoszöld krétajel",
+  "item.chalk.lime_glow_chalk": "Világító világoszöld kréta",
+  "block.chalk.lime_glow_chalk_mark": "Világító világoszöld krétajel",
+
+  "item.chalk.pink_chalk": "Pink kréta",
+  "block.chalk.pink_chalk_mark": "Pink krétajel",
+  "item.chalk.pink_glow_chalk": "Világító pink kréta",
+  "block.chalk.pink_glow_chalk_mark": "Világító pink krétajel",
+
+  "item.chalk.gray_chalk": "Szürke kréta",
+  "block.chalk.gray_chalk_mark": "Szürke krétajel",
+  "item.chalk.gray_glow_chalk": "Világító szürke kréta",
+  "block.chalk.gray_glow_chalk_mark": "Világító szürke krétajel",
+
+  "item.chalk.light_gray_chalk": "Viágosszürke kréta",
+  "block.chalk.light_gray_chalk_mark": "Viágosszürke krétajel",
+  "item.chalk.light_gray_glow_chalk": "Világító viágosszürke kréta",
+  "block.chalk.light_gray_glow_chalk_mark": "Világító viágosszürke krétajel",
+
+  "item.chalk.cyan_chalk": "Zöldeskék kréta",
+  "block.chalk.cyan_chalk_mark": "Zöldeskék krétajel",
+  "item.chalk.cyan_glow_chalk": "Világító zöldeskék kréta",
+  "block.chalk.cyan_glow_chalk_mark": "Világító zöldeskék krétajel",
+
+  "item.chalk.brown_chalk": "Barna kréta",
+  "block.chalk.brown_chalk_mark": "Barna krétajel",
+  "item.chalk.brown_glow_chalk": "Világító barna kréta",
+  "block.chalk.brown_glow_chalk_mark": "Világító barna krétajel",
+
+  "item.chalk.black_chalk": "Fekete kréta",
+  "block.chalk.black_chalk_mark": "Fekete krétajel",
+  "item.chalk.black_glow_chalk": "Világító fekete kréta",
+  "block.chalk.black_glow_chalk_mark": "Világító fekete krétajel",
+
+  "gui.chalk.config.title": "Kréta konfiguráció",
+  "gui.chalk.config.emit_particles": "Részecskék: %s",
+  "gui.chalk.config.emit_particles.hover": "Részecskék engedélyezése a kréta használatakor",
+  "gui.chalk.config.addons": "Javasolt Addon:",
+  "gui.chalk.config.addons.colorful_addon": "Szines kréta Addon",
+  "gui.chalk.config.addons.colorful_addon.hover": "Kréta 15 különféle színben (az alapértelmezett a fehér)",
+  "gui.chalk.config.reset": "Alaphelyzet",
+  "gui.chalk.config.reset.hover": "Alapértelmezett konfiguráció visszaállítása",
+  "gui.chalk.config.back": "Vissza",
+  "gui.chalk.config.back.hover": "Változtatások mentése és visszalépés az előző lapra"
+}
