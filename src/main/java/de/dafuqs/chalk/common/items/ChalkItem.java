@@ -46,7 +46,8 @@ public class ChalkItem extends Item {
 				clickedFace = clickedBlockState.get(ChalkMarkBlock.FACING);
 				markPosition = pos;
 				world.removeBlock(pos, false);
-			} else if (!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
+			} else if (player != null &&
+					!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
 				return ActionResult.PASS;
 			} else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) || stack.getItem() != this) {
 				return ActionResult.PASS;
@@ -66,7 +67,8 @@ public class ChalkItem extends Item {
 					.with(ChalkMarkBlock.ORIENTATION, orientation);
 
 			if (world.setBlockState(markPosition, blockState, 1 | 2)) {
-				if (!player.isCreative()) {
+				if (player != null &&
+						!player.isCreative()) {
 					if (stack.getDamage() >= stack.getMaxDamage()) {
 						world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
 					}
@@ -84,45 +86,33 @@ public class ChalkItem extends Item {
 		return ChalkRegistry.chalkVariants.get(this.dyeColor).chalkBlock;
 	}
 
-	private int getClickedRegion(@NotNull Vec3d clickLocation, Direction face) {
-		// Calculates which region of the block was clicked:
-		// Matrix represents the block regions:
-		final int[][] blockRegions = new int[][]{
-				new int[]{0, 1, 2},
-				new int[]{3, 4, 5},
-				new int[]{6, 7, 8}
+	/**
+	 * Calculate the fractional part of v
+	 * @return Fractional part of v (always non-negative and less than 1)
+	 */
+	private static double frac(double v) {
+		return v - Math.floor(v);
+	}
+
+	/**
+	 * Calculates which region of the block was clicked
+	 * @param rx [0, 1, 2] = [left, center, right]
+	 * @param ry [0, 1, 2] = [top, center, bottom]
+	 * @return region number (top-left = 0 … bottom-right = 8)
+	 */
+	private static int blockreg(int rx, int ry) {
+		return 3 * rx + ry;
+	}
+
+	private int getClickedRegion(@NotNull Vec3d clickLocation, @NotNull Direction face) {
+		final double dx = frac(clickLocation.x);
+		final double dy = frac(clickLocation.y);
+		final double dz = frac(clickLocation.z);
+
+		return switch (face) {
+			default -> blockreg(Math.min(2, (int) (3 * dz)), Math.min(2, (int) (3 * dx)));
+			case NORTH, SOUTH -> blockreg(Math.min(2, (int) (3 * (1 - dy))), Math.min(2, (int) (3 * dx)));
+			case WEST, EAST -> blockreg(Math.min(2, (int) (3 * (1 - dy))), Math.min(2, (int) (3 * dz)));
 		};
-
-		final double x = clickLocation.x;
-		final double y = clickLocation.y;
-		final double z = clickLocation.z;
-
-		// Remove whole number: 21.31 => 0.31
-		final double fracX = x - (int) x;
-		final double fracY = y - (int) y;
-		final double fracZ = z - (int) z;
-
-		// Normalize negative values
-		final double dx = fracX > 0 ? fracX : fracX + 1;
-		final double dy = fracY > 0 ? fracY : fracY + 1;
-		final double dz = fracZ > 0 ? fracZ : fracZ + 1;
-
-		if (face == Direction.UP || face == Direction.DOWN) {
-			final int xpart = Math.min(2, (int) (dx / 0.333));
-			final int zpart = Math.min(2, (int) (dz / 0.333));
-
-			return blockRegions[zpart][xpart];
-		} else if (face == Direction.NORTH || face == Direction.SOUTH) {
-			final int xpart = Math.min(2, (int) (dx / 0.333));
-			final int ypart = Math.min(2, (int) ((1 - dy) / 0.333));
-
-			return blockRegions[ypart][xpart];
-		} else if (face == Direction.WEST || face == Direction.EAST) {
-			final int zpart = Math.min(2, (int) (dz / 0.333));
-			final int ypart = Math.min(2, (int) ((1 - dy) / 0.333));
-
-			return blockRegions[ypart][zpart];
-		} else
-			return 4; // center of the block by default
 	}
 }
