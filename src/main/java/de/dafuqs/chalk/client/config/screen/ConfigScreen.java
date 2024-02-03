@@ -72,9 +72,7 @@ public class ConfigScreen extends Screen {
 			if (!CompatibilityData.COLORFUL_ADDON) {
 				GRID_ADDER.add(ButtonWidget.builder(
 						Text.translatable("gui.chalk.config.addons.colorful_addon"),
-						ConfirmLinkScreen.opening("https://modrinth.com/mod/chalk-colorful-addon",
-								this,
-								true)
+						ConfirmLinkScreen.opening(this, "https://modrinth.com/mod/chalk-colorful-addon")
 				).build()).setTooltip(Tooltip.of(Text.translatable("gui.chalk.config.addons.colorful_addon.hover")));
 			}
 		}

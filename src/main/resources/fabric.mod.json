@@ -33,9 +33,11 @@
   },
   "mixins": [],
   "depends": {
-    "minecraft": "~1.20",
+    "minecraft": "~1.20.4",
     "fabric-api": "*",
     "fabric-simplelibs": "*"
   },
-  "suggests": { }
+  "suggests": {
+    "chalk-colorful-addon": "*"
+  }
 }
