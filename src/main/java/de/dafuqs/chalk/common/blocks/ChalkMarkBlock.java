@@ -61,7 +61,7 @@ public class ChalkMarkBlock extends Block {
 	@Override
 	protected void spawnBreakParticles(World world, PlayerEntity player, BlockPos pos, BlockState state) {
 		Random random = world.getRandom();
-		if (!world.isClient)
+		if (!world.isClient())
 			world.playSound(null, pos, SoundEvents.BLOCK_WART_BLOCK_HIT, SoundCategory.BLOCKS, 0.5f, random.nextFloat() * 0.2f + 0.8f);
 		else {
 			if (Chalk.CONFIG.EmitParticles) {
