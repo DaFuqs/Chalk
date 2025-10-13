@@ -49,7 +49,7 @@ public class ChalkItem extends Item {
 				return ActionResult.PASS;
 			}
 
-			if (world.isClient) {
+			if (world.isClient()) {
 				Random random = world.getRandom();
 				if (Chalk.CONFIG.EmitParticles) {
 					world.addParticleClient(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (random.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (random.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
@@ -69,7 +69,7 @@ public class ChalkItem extends Item {
 					if (stack.getDamage() >= stack.getMaxDamage()) {
 						world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
 					}
-					stack.damage(1, player, LivingEntity.getSlotForHand(context.getHand()));
+					stack.damage(1, player, context.getHand());
 				}
 				world.playSound(null, markPosition, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundCategory.BLOCKS, 0.6f, world.random.nextFloat() * 0.2f + 0.8f);
 				return ActionResult.CONSUME;
