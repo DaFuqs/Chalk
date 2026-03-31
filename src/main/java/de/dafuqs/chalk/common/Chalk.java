@@ -1,11 +1,12 @@
 package de.dafuqs.chalk.common;
 
-import de.dafuqs.chalk.config.*;
-import me.shedaniel.autoconfig.*;
-import me.shedaniel.autoconfig.serializer.*;
-import net.fabricmc.api.*;
-import net.minecraft.util.*;
-import org.jetbrains.annotations.*;
+import de.dafuqs.chalk.config.ChalkConfig;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.resources.Identifier;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 public class Chalk implements ModInitializer {
 	
@@ -23,7 +24,6 @@ public class Chalk implements ModInitializer {
 	
 	@Contract(value = "_ -> new", pure = true)
 	public static @NotNull Identifier id(String name) {
-		return Identifier.of(MOD_ID, name);
+		return Identifier.fromNamespaceAndPath(MOD_ID, name);
 	}
-	
 }
