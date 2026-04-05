@@ -1,7 +1,7 @@
 package de.dafuqs.chalk.client;
 
-import de.dafuqs.chalk.common.*;
-import net.fabricmc.api.*;
+import de.dafuqs.chalk.common.ChalkRegistry;
+import net.fabricmc.api.ClientModInitializer;
 
 public class ChalkClient implements ClientModInitializer {
 

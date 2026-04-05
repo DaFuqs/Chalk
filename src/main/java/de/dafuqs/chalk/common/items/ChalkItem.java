@@ -1,81 +1,84 @@
 package de.dafuqs.chalk.common.items;
 
-import de.dafuqs.chalk.common.*;
+import de.dafuqs.chalk.common.Chalk;
+import de.dafuqs.chalk.common.ChalkRegistry;
 import de.dafuqs.chalk.common.blocks.ChalkMarkBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.*;
-import net.minecraft.world.World;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class ChalkItem extends Item {
+
 	protected DyeColor dyeColor;
 
-	public ChalkItem(Settings settings, DyeColor dyeColor) {
+	public ChalkItem(Properties settings, DyeColor dyeColor) {
 		super(settings);
 		this.dyeColor = dyeColor;
 	}
 
-	@Override
-	public ActionResult useOnBlock(ItemUsageContext context) {
-		final World world = context.getWorld();
-		final BlockPos pos = context.getBlockPos();
+	@Override @NotNull
+	public InteractionResult useOn(UseOnContext context) {
+		final Level world = context.getLevel();
+		final BlockPos pos = context.getClickedPos();
 		final BlockState clickedBlockState = world.getBlockState(pos);
-		final PlayerEntity player = context.getPlayer();
-		final ItemStack stack = context.getStack();
-		Direction clickedFace = context.getSide();
-		BlockPos markPosition = pos.offset(clickedFace);
-		if (world.isAir(markPosition) || world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) {
+		final Player player = context.getPlayer();
+		final ItemStack stack = context.getItemInHand();
+		Direction clickedFace = context.getClickedFace();
+		BlockPos markPosition = pos.relative(clickedFace);
+		if (world.isEmptyBlock(markPosition) || world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) {
 			if (clickedBlockState.getBlock() instanceof ChalkMarkBlock) { // replace mark
-				clickedFace = clickedBlockState.get(ChalkMarkBlock.FACING);
+				clickedFace = clickedBlockState.getValue(ChalkMarkBlock.FACING);
 				markPosition = pos;
 				world.removeBlock(pos, false);
 			} else if (player != null &&
-					!Block.isFaceFullSquare(clickedBlockState.getCollisionShape(world, pos, ShapeContext.of(player)), clickedFace)) {
-				return ActionResult.PASS;
-			} else if ((!world.isAir(markPosition) && world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) || stack.getItem() != this) {
-				return ActionResult.PASS;
+					!Block.isFaceFull(clickedBlockState.getCollisionShape(world, pos, CollisionContext.of(player)), clickedFace)) {
+				return InteractionResult.PASS;
+			} else if ((!world.isEmptyBlock(markPosition) && world.getBlockState(markPosition).getBlock() instanceof ChalkMarkBlock) || stack.getItem() != this) {
+				return InteractionResult.PASS;
 			}
 
-			if (world.isClient()) {
-				Random random = world.getRandom();
+			if (world.isClientSide()) {
+				RandomSource random = world.getRandom();
 				if (Chalk.CONFIG.EmitParticles) {
-					world.addParticleClient(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (random.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (random.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
+					world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (random.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (random.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
 				}
-				return ActionResult.SUCCESS;
+				return InteractionResult.SUCCESS;
 			}
 
-			final int orientation = getClickedRegion(context.getHitPos(), clickedFace);
+			final int orientation = getClickedRegion(context.getClickLocation(), clickedFace);
 
-			BlockState blockState = getChalkMarkBlock().getDefaultState()
-					.with(ChalkMarkBlock.FACING, clickedFace)
-					.with(ChalkMarkBlock.ORIENTATION, orientation);
+			BlockState blockState = getChalkMarkBlock().defaultBlockState()
+					.setValue(ChalkMarkBlock.FACING, clickedFace)
+					.setValue(ChalkMarkBlock.ORIENTATION, orientation);
 
-			if (world.setBlockState(markPosition, blockState, 1 | 2)) {
+			if (world.setBlock(markPosition, blockState, 1 | 2)) {
 				if (player != null &&
 						!player.isCreative()) {
-					if (stack.getDamage() >= stack.getMaxDamage()) {
-						world.playSound(null, markPosition, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5f, 1f);
+					if (stack.getDamageValue() >= stack.getMaxDamage()) {
+						world.playSound(null, markPosition, SoundEvents.GRAVEL_BREAK, SoundSource.BLOCKS, 0.5f, 1f);
 					}
-					stack.damage(1, player, context.getHand());
+					stack.hurtAndBreak(1, player, context.getHand());
 				}
-				world.playSound(null, markPosition, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundCategory.BLOCKS, 0.6f, world.random.nextFloat() * 0.2f + 0.8f);
-				return ActionResult.CONSUME;
+				world.playSound(null, markPosition, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 0.6f, world.getRandom().nextFloat() * 0.2f + 0.8f);
+				return InteractionResult.CONSUME;
 			}
 		}
-		return ActionResult.FAIL;
+		return InteractionResult.FAIL;
 	}
 
 	public Block getChalkMarkBlock() {
@@ -100,7 +103,7 @@ public class ChalkItem extends Item {
 		return 3 * rx + ry;
 	}
 
-	private int getClickedRegion(@NotNull Vec3d clickLocation, @NotNull Direction face) {
+	private int getClickedRegion(@NotNull Vec3 clickLocation, @NotNull Direction face) {
 		final double dx = frac(clickLocation.x);
 		final double dy = frac(clickLocation.y);
 		final double dz = frac(clickLocation.z);
