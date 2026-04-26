@@ -1,0 +1,137 @@
+{
+  "values": [
+    "chalk:white_chalk",
+    {
+      "id": "chalk:black_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:blue_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:brown_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:cyan_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:gray_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:green_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:light_blue_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:light_gray_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:lime_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:magenta_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:orange_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:pink_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:purple_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:red_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:white_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:yellow_chalk",
+      "required": false
+    },
+
+
+
+    "chalk:white_glow_chalk",
+    {
+      "id": "chalk:black_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:blue_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:brown_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:cyan_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:gray_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:green_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:light_blue_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:light_gray_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:lime_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:magenta_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:orange_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:pink_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:purple_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:red_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:white_glow_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:yellow_glow_chalk",
+      "required": false
+    }
+  ]
+}

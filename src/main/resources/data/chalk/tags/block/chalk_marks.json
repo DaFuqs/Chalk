@@ -1,0 +1,137 @@
+{
+  "values": [
+    "chalk:white_chalk_mark",
+    {
+      "id": "chalk:black_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:blue_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:brown_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:cyan_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:gray_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:green_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:light_blue_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:light_gray_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:lime_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:magenta_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:orange_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:pink_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:purple_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:red_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:white_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:yellow_chalk_mark",
+      "required": false
+    },
+
+
+
+    "chalk:white_glow_chalk_mark",
+    {
+      "id": "chalk:black_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:blue_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:brown_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:cyan_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:gray_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:green_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:light_blue_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:light_gray_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:lime_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:magenta_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:orange_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:pink_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:purple_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:red_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:white_glow_chalk_mark",
+      "required": false
+    },
+    {
+      "id": "chalk:yellow_glow_chalk_mark",
+      "required": false
+    }
+  ]
+}
