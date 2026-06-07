@@ -2,5 +2,85 @@
   "item.chalk.white_chalk": "Мел",
   "block.chalk.white_chalk_mark": "Пометка мелом",
   "item.chalk.white_glow_chalk": "Светящийся мел",
-  "block.chalk.white_glow_chalk_mark": "Светящаяся Метка Мелом"
+  "block.chalk.white_glow_chalk_mark": "Светящаяся метка мелом"
+  
+  "item.chalk.red_chalk": "Красный мел",
+  "block.chalk.red_chalk_mark": "Красная метка мелом",
+  "item.chalk.red_glow_chalk": "Красный светящийся мел",
+  "block.chalk.red_glow_chalk_mark": "Красная светящаяся метка мелом",
+
+  "item.chalk.blue_chalk": "Синий мел",
+  "block.chalk.blue_chalk_mark": "Синяя метка мелом",
+  "item.chalk.blue_glow_chalk": "Синий светящийся мел",
+  "block.chalk.blue_glow_chalk_mark": "Синяя светящаяся метка мелом",
+
+  "item.chalk.green_chalk": "Зелёный мел",
+  "block.chalk.green_chalk_mark": "Зелёная метка мелом",
+  "item.chalk.green_glow_chalk": "Зелёный светящийся мел",
+  "block.chalk.green_glow_chalk_mark": "Зелёная светящаяся метка мелом",
+
+  "item.chalk.purple_chalk": "Фиолетовый мел",
+  "block.chalk.purple_chalk_mark": "Фиолетовая метка мелом",
+  "item.chalk.purple_glow_chalk": "Фиолетовый светящийся мел",
+  "block.chalk.purple_glow_chalk_mark": "Фиолетовая светящаяся метка метом",
+
+  "item.chalk.orange_chalk": "Оранжевый мел",
+  "block.chalk.orange_chalk_mark": "Оранжевая метка мелом",
+  "item.chalk.orange_glow_chalk": "Оранжевый светящийся мел",
+  "block.chalk.orange_glow_chalk_mark": "Оранжевая светящаяся метка мелом",
+
+  "item.chalk.magenta_chalk": "Пурпурный мел",
+  "block.chalk.magenta_chalk_mark": "Пурпурная метка мелом",
+  "item.chalk.magenta_glow_chalk": "Пурпурный светящийся мел",
+  "block.chalk.magenta_glow_chalk_mark": "Пурпурная светящаяся метка мелом",
+
+  "item.chalk.light_blue_chalk": "Голубой мел",
+  "block.chalk.light_blue_chalk_mark": "Голубая метка мелом",
+  "item.chalk.light_blue_glow_chalk": "Голубой светящийся мел",
+  "block.chalk.light_blue_glow_chalk_mark": "Голубая светящаяся метка мелом",
+
+  "item.chalk.yellow_chalk": "Желтый мел",
+  "block.chalk.yellow_chalk_mark": "Жёлтая метка мелом",
+  "item.chalk.yellow_glow_chalk": "Жёлтый светящийся мел",
+  "block.chalk.yellow_glow_chalk_mark": "Жёлтая светящаяся метка мелом",
+
+  "item.chalk.lime_chalk": "Лаймовый мел",
+  "block.chalk.lime_chalk_mark": "Лаймовая метка мелом",
+  "item.chalk.lime_glow_chalk": "Лаймовый светящийся мел",
+  "block.chalk.lime_glow_chalk_mark": "Лаймовая светящаяся метка мелом",
+
+  "item.chalk.pink_chalk": "Розовый мел",
+  "block.chalk.pink_chalk_mark": "Розовая метка мелом",
+  "item.chalk.pink_glow_chalk": "Розовый светящийся мел",
+  "block.chalk.pink_glow_chalk_mark": "Розовая светящаяся метка мелом",
+
+  "item.chalk.gray_chalk": "Серый мел",
+  "block.chalk.gray_chalk_mark": "Серая метка мелом",
+  "item.chalk.gray_glow_chalk": "Серый светящийся мел",
+  "block.chalk.gray_glow_chalk_mark": "Серая светящаяся метка мелом",
+
+  "item.chalk.light_gray_chalk": "Светло-серый мел",
+  "block.chalk.light_gray_chalk_mark": "Светло-серая метка мелом",
+  "item.chalk.light_gray_glow_chalk": "Светло-серый светящийся мел",
+  "block.chalk.light_gray_glow_chalk_mark": "Светло-серая светящаяся метка мелом",
+
+  "item.chalk.cyan_chalk": "Бирюзовый мел",
+  "block.chalk.cyan_chalk_mark": "Бирюзовая метка мелом",
+  "item.chalk.cyan_glow_chalk": "Бирюзовый светящийся мел",
+  "block.chalk.cyan_glow_chalk_mark": "Бирюзовая светящаяся метка мелом",
+
+  "item.chalk.brown_chalk": "Коричневый мел",
+  "block.chalk.brown_chalk_mark": "Коричневая метка мелом",
+  "item.chalk.brown_glow_chalk": "Коричневый светящийся мел",
+  "block.chalk.brown_glow_chalk_mark": "Коричневая светящаяся метка мелом",
+
+  "item.chalk.black_chalk": "Чёрный мел",
+  "block.chalk.black_chalk_mark": "Чёрная метка мелом",
+  "item.chalk.black_glow_chalk": "Чёрный светящийся мел",
+  "block.chalk.black_glow_chalk_mark": "Чёрная светящаяся метка мелом",
+
+  "text.autoconfig.Chalk.title": "Настройки Chalk",
+  "text.autoconfig.Chalk.option.EmitParticles": "Показывать частицы при нанесении мелом"
+
+  "modmenu.descriptionTranslation.chalk": "Портированная версия мода Chalk от mortuusars с некоторыми дополнениями"
 }
