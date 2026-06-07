@@ -2,7 +2,7 @@
   "item.chalk.white_chalk": "Мел",
   "block.chalk.white_chalk_mark": "Пометка мелом",
   "item.chalk.white_glow_chalk": "Светящийся мел",
-  "block.chalk.white_glow_chalk_mark": "Светящаяся метка мелом"
+  "block.chalk.white_glow_chalk_mark": "Светящаяся метка мелом",
   
   "item.chalk.red_chalk": "Красный мел",
   "block.chalk.red_chalk_mark": "Красная метка мелом",
@@ -80,7 +80,7 @@
   "block.chalk.black_glow_chalk_mark": "Чёрная светящаяся метка мелом",
 
   "text.autoconfig.Chalk.title": "Настройки Chalk",
-  "text.autoconfig.Chalk.option.EmitParticles": "Показывать частицы при нанесении мелом"
+  "text.autoconfig.Chalk.option.EmitParticles": "Показывать частицы при нанесении мелом",
 
   "modmenu.descriptionTranslation.chalk": "Портированная версия мода Chalk от mortuusars с некоторыми дополнениями"
 }
