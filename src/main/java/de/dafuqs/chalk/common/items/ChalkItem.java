@@ -55,7 +55,7 @@ public class ChalkItem extends Item {
 			if (world.isClientSide()) {
 				RandomSource random = world.getRandom();
 				if (Chalk.CONFIG.EmitParticles) {
-					world.addParticle(ParticleTypes.CLOUD, markPosition.getX() + (0.5 * (random.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (random.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
+					world.addParticle(ParticleTypes.POOF, markPosition.getX() + (0.5 * (random.nextFloat() + 0.4)), markPosition.getY() + 0.65, markPosition.getZ() + (0.5 * (random.nextFloat() + 0.4)), 0.0D, 0.005D, 0.0D);
 				}
 				return InteractionResult.SUCCESS;
 			}
