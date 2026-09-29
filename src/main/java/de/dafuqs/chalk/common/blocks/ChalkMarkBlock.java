@@ -7,7 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -17,7 +17,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -60,18 +59,13 @@ public class ChalkMarkBlock extends Block {
 		super.createBlockStateDefinition(builder);
 	}
 
-	@Override
-	public void playerDestroy(@NotNull Level world, @NotNull Player player, @NotNull BlockPos pos, @NotNull BlockState state, @Nullable BlockEntity blockEntity, @NotNull ItemStack stack) {
-		super.playerDestroy(world, player, pos, state, blockEntity, stack);
-	}
-	
 	@Override @NotNull
 	protected ItemStack getCloneItemStack(@NotNull LevelReader world, @NotNull BlockPos pos, @NotNull BlockState state, boolean includeData) {
 		return ChalkRegistry.chalkVariants.get(dyeColor).chalkItem.getDefaultInstance();
 	}
 
 	@Override
-	protected void spawnDestroyParticles(Level world, @NotNull Player player, @NotNull BlockPos pos, @NotNull BlockState state) {
+	public void spawnDestroyByEntityParticles(Level world, @Nullable Entity entity, @NotNull BlockPos pos, @NotNull BlockState state) {
 		RandomSource random = world.getRandom();
 		if (!world.isClientSide())
 			world.playSound(null, pos, SoundEvents.WART_BLOCK_HIT, SoundSource.BLOCKS, 0.5f, random.nextFloat() * 0.2f + 0.8f);

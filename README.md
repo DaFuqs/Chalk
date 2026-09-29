@@ -11,7 +11,13 @@ Fabric/Quilt Loader port of the Minecraft mod [Chalk](https://github.com/mortuus
 Thank you very much for creating the original Forge version and the permission to port Chalk to fabric!  
 
 ## Requires  
-- [Fabric API](https://modrinth.com/mod/fabric-api) *or* [Quilted Fabric API (QFAPI)](https://modrinth.com/mod/qsl)  
+This branch targets Minecraft 26.3 with Java 25 and Fabric Loader 0.19.5 or newer.
+- [Fabric API](https://modrinth.com/mod/fabric-api) for Minecraft 26.3
+- [Cloth Config](https://modrinth.com/mod/cloth-config) 26.3.159 or newer for Minecraft 26.3
+- Optional: [Mod Menu](https://modrinth.com/mod/modmenu) for the in-game configuration screen
+
+Build with Java 25: `./gradlew build`. See [qa/README.md](qa/README.md) for the
+production-JAR server smoke test and its coverage.
 
 ## Adds:  
 - Chalk: Crafted shapeless with two Calcite  

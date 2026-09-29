@@ -33,10 +33,11 @@
   },
   "mixins": [],
   "depends": {
-    "minecraft": ">=${minecraft_version}",
-    "fabricloader": "*",
+    "minecraft": "~${minecraft_version}",
+    "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "cloth-config": "*"
+    "cloth-config": ">=26.3.159",
+    "java": ">=25"
   },
   "suggests": {
     "chalk-colorful-addon": "*"
