@@ -69,7 +69,6 @@ public class ChalkRegistry {
 				fabricItemGroupEntries.accept(chalkVariant1.glowChalkItem);
 			}
 		});
-		
 	}
 	
 	public static class ChalkVariant {
@@ -98,9 +97,9 @@ public class ChalkRegistry {
 			ResourceKey<Block> glowBlockKey = ResourceKey.create(Registries.BLOCK, glowBlockId);
 			
 			this.chalkItem = new ChalkItem(new Item.Properties().setId(itemKey).stacksTo(1).durability(64), dyeColor);
-			this.chalkBlock = new ChalkMarkBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(blockKey).replaceable().noCollision().noOcclusion().sound(SoundType.GRAVEL).pushReaction(PushReaction.DESTROY), dyeColor);
+			this.chalkBlock = new ChalkMarkBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(blockKey).replaceable().noCollision().noOcclusion().sound(SoundType.GRAVEL).pushReaction(PushReaction.POPPED), dyeColor);
 			this.glowChalkItem = new GlowChalkItem(new Item.Properties().setId(glowItemKey).stacksTo(1).durability(64), dyeColor);
-			this.glowChalkBlock = new GlowChalkMarkBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(glowBlockKey).replaceable().noCollision().noOcclusion().sound(SoundType.GRAVEL).pushReaction(PushReaction.DESTROY), dyeColor);
+			this.glowChalkBlock = new GlowChalkMarkBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().setId(glowBlockKey).replaceable().noCollision().noOcclusion().sound(SoundType.GRAVEL).pushReaction(PushReaction.POPPED), dyeColor);
 			
 			Registry.register(BuiltInRegistries.ITEM, itemId, chalkItem);
 			Registry.register(BuiltInRegistries.BLOCK, blockId, chalkBlock);
